@@ -8,6 +8,7 @@
 <link rel="canonical" href="https://www.verdemarerimini.it/">
 <link rel="alternate" hreflang="it" href="https://www.verdemarerimini.it/">
 <link rel="alternate" hreflang="en" href="https://www.verdemarerimini.it/?lang=en">
+<link rel="alternate" hreflang="de" href="https://www.verdemarerimini.it/?lang=de">
 <link rel="alternate" hreflang="x-default" href="https://www.verdemarerimini.it/">
 <meta name="robots" content="index, follow, max-image-preview:large">
 <meta name="geo.region" content="IT-RN">
@@ -16,6 +17,7 @@
 <meta property="og:type" content="website">
 <meta property="og:locale" content="it_IT">
 <meta property="og:locale:alternate" content="en_GB">
+<meta property="og:locale:alternate" content="de_DE">
 <meta property="og:site_name" content="Verde Mare Rimini">
 <meta property="og:url" content="https://www.verdemarerimini.it/">
 <meta property="og:title" content="Verde Mare Rimini – Appartamento turistico a 50 m dal mare">
@@ -302,10 +304,14 @@
     .hero-gallery { height:55vw; }
     nav ul { display:none; }
     .pren-wrap,.cont-wrap,.regole-inner { grid-template-columns:1fr; padding:0 24px 56px; }
+    .pren-wrap > *, .cont-wrap > *, .regole-inner > *, .dotazioni > *, .guida-grid > * { min-width:0; }
+    .pren-form { padding:24px; }
+    .pren-info ul li { font-size:.88rem; }
     .regole { padding:56px 24px; }
     .dotazioni { grid-template-columns:1fr 1fr; }
     .guida-grid { grid-template-columns:1fr; }
-    #recensioni > div:last-child { grid-template-columns:1fr; }
+    #recensioni > div:last-child { grid-template-columns:1fr !important; }
+    #recensioni { padding:56px 24px !important; }
     .grid-3,.grid-hero-3 { grid-template-columns:1fr 1fr; }
     .grid-2-1,.grid-1-2 { grid-template-columns:1fr; }
     .ambiente-block { padding:0 20px 48px; }
@@ -327,6 +333,7 @@
   <div class="lang-switch" role="group" aria-label="Lingua / Language">
     <button type="button" data-lang="it" class="active" onclick="setLang('it')">IT</button>
     <button type="button" data-lang="en" onclick="setLang('en')">EN</button>
+    <button type="button" data-lang="de" onclick="setLang('de')">DE</button>
   </div>
   </div>
 </nav>
@@ -1120,6 +1127,177 @@ const I18N = {
   "foot": "© 2025 <strong>Verde Mare</strong> · Holiday apartment · Rimini · All rights reserved",
   "js_err": "Something went wrong. Please try again or contact us directly on WhatsApp.",
   "js_sending": "Sending..."
+ },
+ "de": {
+  "nav_apt": "Die Wohnung",
+  "nav_pren": "Buchen",
+  "nav_guida": "Rimini-Guide",
+  "nav_cont": "Kontakt",
+  "nav_cta": "Jetzt buchen",
+  "hero_eyebrow": "📍 Rimini · 50 Meter vom Meer",
+  "hero_subtitle": "Ihr Stück Rimini, nur wenige Schritte vom Meer",
+  "hero_desc": "Eine sorgfältig renovierte Wohnung, in der sich jeder Morgen schon nach Urlaub anfühlt. Blick auf die Strandpromenade, das Gefühl von Zuhause und aller Komfort, um Rimini wirklich zu genießen.",
+  "hero_b1": "🌅 Meerblick",
+  "hero_b2": "🛏️ 2 Schlafzimmer",
+  "hero_b3": "❄️ Klimaanlage",
+  "hero_b4": "📶 Kostenloses WLAN",
+  "hero_b5": "🎬 Smart-TV",
+  "hero_b6": "👨‍👩‍👧 2–4 Personen",
+  "hero_b7": "✨ Frisch renoviert",
+  "hero_cta1": "Jetzt buchen",
+  "hero_cta2": "Die Wohnung ansehen",
+  "hero_badge_sub": "Direkt vom Balkon",
+  "sec_apt_eyebrow": "Die Wohnung",
+  "sec_apt_title": "Jeder Raum mit Sorgfalt",
+  "d1_t": "2 Schlafzimmer",
+  "d1_p": "Doppelzimmer und kleines Zimmer mit Etagenbett. Für bis zu 4 Gäste.",
+  "d2_t": "50 m vom Meer",
+  "d2_p": "Der Strand ist buchstäblich eine Gehminute von der Wohnung entfernt.",
+  "d3_t": "Familien mit Kindern",
+  "d3_p": "Strandspielzeug, Gesellschaftsspiele, Malsachen und Kinderbücher. Auf Wunsch: Kinderbett und Hochstuhl.",
+  "d4_t": "2 Smart-TVs",
+  "d4_p": "Ein Smart-TV im Wohnzimmer und einer im Schlafzimmer. Netflix inklusive: einfach anmelden und Ihre Lieblingssendungen genießen.",
+  "d5_t": "Klimaanlage",
+  "d5_p": "In jedem Raum, für angenehmen Komfort im Sommer wie im Winter.",
+  "d6_t": "Voll ausgestattete Küche",
+  "d6_p": "Kochfeld, Kühlschrank, Gefrierfach, Backofen, Mikrowelle, Geschirr, Gläser, Besteck und alles, was zum Kochen nötig ist.",
+  "d7_t": "Kostenloses WLAN",
+  "d7_p": "Schnelle Verbindung, während des gesamten Aufenthalts inklusive.",
+  "d8_t": "Safe",
+  "d8_p": "Ein Safe im Schlafzimmer, damit Ihre Wertsachen sicher verwahrt sind.",
+  "d9_t": "Kaffee-Ecke",
+  "d9_p": "Nespresso-Maschine, Milchaufschäumer, Wasserkocher, Toaster und Zitruspresse. Das Frühstück fühlt sich an wie zu Hause.",
+  "d10_t": "Parken im Sommer",
+  "d10_p": "Reservierter Stellplatz, 2 Minuten entfernt, auf einem rund um die Uhr videoüberwachten und bewachten Gelände. Zugang mit Karte. Verfügbar von Mai bis September.",
+  "d11_t": "Parken im Winter",
+  "d11_p": "Sie können frei auf der Straße parken oder kostenlos auf der abgegrenzten Fläche gegenüber dem Gebäude.",
+  "amb1": "🌅 Balkon mit Meerblick",
+  "amb2": "🛋️ Wohnzimmer",
+  "amb3": "🍳 Küche & Essbereich",
+  "amb4": "🛏️ Doppelzimmer",
+  "amb5": "🛏️ Zimmer mit Etagenbett",
+  "amb6": "🚿 Badezimmer",
+  "rec_label": "Zufriedene Gäste",
+  "rec_title": "Was Gäste über Verde Mare sagen",
+  "rec_sub": "4,93 · Top 5 % auf Airbnb",
+  "rec1": "„Eine wunderschöne Wohnung mit herrlichem Blick aufs Meer. Die Küche ist sehr gut ausgestattet, es fehlt an nichts. Man fühlt sich sofort wohl, und Lisa ist immer gut erreichbar.“",
+  "rec2": "„Alles, was wir brauchten, war vorhanden. Lisa ist eine fantastische Gastgeberin, immer aufmerksam und zuvorkommend. Der Meerblick ist einfach perfekt. Wir kommen bestimmt wieder.“",
+  "rec3": "„Lisa ist eine fantastische Gastgeberin, sie hat an alles gedacht. Die Wohnung ist genau wie auf den Fotos: sauber, geräumig, gemütlich und gut ausgestattet. Der Blick aufs Meer ist wunderbar.“",
+  "rec4": "„Die Wohnung war gemütlich, sehr schön und vor allem blitzsauber. Die Lage ist einfach perfekt: Strand und alles Weitere sind bequem zu erreichen. Absolut empfehlenswert!“",
+  "rec5": "„Eine Wohnung mit direktem Blick auf den Strand und einem großen Balkon. Sauber und tadellos aufgeräumt und zugleich gemütlich. Lisa ist eine wunderbare Gastgeberin und ihre Unterkunft ist traumhaft.“",
+  "rec_top": "Top 5 % der Airbnb-Unterkünfte",
+  "rec_link": "Alle Bewertungen lesen →",
+  "pren_eyebrow": "Buchen",
+  "pren_title": "Sichern Sie sich Ihren Aufenthalt",
+  "pren_desc": "Füllen Sie das Formular aus und Lisa antwortet Ihnen innerhalb weniger Stunden mit Verfügbarkeit und Details.",
+  "pren_info_t": "Praktische Informationen",
+  "pren_quote": "„Jeder Gast von Verde Mare wird wie ein Freund des Hauses empfangen. Mir ist wichtig, dass Sie sich vom ersten Moment an wohlfühlen.“",
+  "pren_quote_by": "— Lisa, Gastgeberin",
+  "form_t": "Verfügbarkeit anfragen",
+  "f_nome": "Vorname",
+  "f_cognome": "Nachname",
+  "f_email": "E-Mail",
+  "f_tel": "Telefon / WhatsApp",
+  "f_in": "Anreise",
+  "f_out": "Abreise",
+  "f_ospiti": "Anzahl der Gäste",
+  "f_note": "Anmerkungen oder Wünsche",
+  "f_btn": "Anfrage senden",
+  "f_note2": "Lisa antwortet Ihnen innerhalb weniger Stunden 🌿",
+  "ok_t": "Anfrage gesendet!",
+  "ok_p": "Vielen Dank für Ihr Interesse. Lisa meldet sich in Kürze bei Ihnen, um Verfügbarkeit und alle Einzelheiten zu bestätigen.",
+  "g_eyebrow": "Lokaler Guide",
+  "g_title": "Rimini entdecken",
+  "g_desc": "Unsere Tipps, um Rimini in vollen Zügen zu erleben — nur wenige Schritte von der Wohnung entfernt.",
+  "g1_t": "Meer & Strand",
+  "g2_t": "Kunst & Kultur",
+  "g3_t": "Essen gehen",
+  "g4_t": "Sport & Aktivitäten",
+  "g5_t": "Freizeit",
+  "g6_t": "Anreise",
+  "g1_1": "Strandpromenade von Rimini — frisch erneuert, ideal zum Spazieren",
+  "g1_2": "Der Strand, 50 Meter von der Wohnung",
+  "g1_3": "Verleih von Sonnenschirmen und Liegen direkt am Strand",
+  "g1_4": "Sonnenuntergang über dem Meer vom Balkon — unbedingt erleben",
+  "g2_1": "Augustusbogen — römisches Monument aus dem 1. Jh. v. Chr.",
+  "g2_2": "Tiberiusbrücke — 2000 Jahre alt und noch immer begehbar",
+  "g2_3": "Tempio Malatestiano — ein Juwel der Renaissance",
+  "g2_4": "Stadtmuseum — die Geschichte Riminis in einem Rundgang",
+  "g3_1": "Lo Zodiaco — frischer Fisch seit 1991, wenige Schritte von der Wohnung 🌟",
+  "g3_2": "Dalla Lella — Piadina aus der Romagna nach alter Tradition (Siegerin der Sendung Foodish von Bastianich)",
+  "g3_3": "Da Guido 1946 — ⭐ ein Michelin-Stern, kreative Küche auf traditioneller Grundlage",
+  "g3_4": "Markthalle von Rimini — Street Food und regionale Produkte",
+  "g4_1": "Radweg an der Promenade — 15 km Strecke",
+  "g4_2": "Joggen auf der Promenade bei Sonnenauf- oder -untergang",
+  "g4_3": "Beachvolleyball und Beachtennis am Strand",
+  "g4_4": "Fahrradverleih — wenige Schritte von der Wohnung",
+  "g5_1": "Fiabilandia — Freizeitpark, 5 Minuten entfernt",
+  "g5_2": "Italia in Miniatura — eine Attraktion der besonderen Art",
+  "g5_3": "Acquafan — einer der größten Wasserparks Europas",
+  "g5_4": "Oltremare — Natur- und Delfinpark",
+  "g5_5": "Nachtleben — Rimini ist in ganz Europa dafür bekannt",
+  "g6_1": "Flughafen Rimini (RMI) — 5 Minuten mit dem Taxi",
+  "g6_2": "Bahnhof Miramare — 7 Minuten zu Fuß",
+  "g6_3": "Hauptbahnhof Rimini — 10 Minuten mit dem Bus (Linie 11), der Metromare oder dem Taxi",
+  "g6_4": "Autobahn A14 — Ausfahrt Riccione",
+  "reg_t": "Hausordnung",
+  "reg_p": "Damit sich alle wohlfühlen und die Wohnung in bestem Zustand bleibt, bitten wir Sie um ein paar einfache Regeln. Vielen Dank 🌿",
+  "c_eyebrow": "Kontakt",
+  "c_title": "Wir sind für Sie da",
+  "c_desc": "Bei Fragen jeder Art ist Lisa immer erreichbar und antwortet gerne.",
+  "c_role": "Gastgeberin von Verde Mare",
+  "c_quote": "„Jeder Gast soll sich zu Hause fühlen, auch fern von zu Hause. Ich bin für alles da, was Sie brauchen.“",
+  "sec_apt_desc": "Willkommen in meiner gemütlichen Dreizimmerwohnung, erst kürzlich renoviert und mit Sorgfalt eingerichtet, damit Sie sich wie zu Hause fühlen.<br>Sie liegt im zweiten Stock eines ruhigen Hauses (ohne Aufzug), zentral und nur wenige Schritte vom Strand, der neuen Promenade, Restaurants und Lokalen entfernt.<br>Die perfekte Wahl für alle, die Komfort, Erholung und die Annehmlichkeiten der Stadt suchen.",
+  "hero_badge_t": "🌊 Blick auf die Promenade bei Sonnenuntergang",
+  "pi1": "<strong>Anreise:</strong> von 15:00 bis 19:00 Uhr",
+  "pi2": "<strong>Selbstständige Anreise:</strong> Schlüsselbox auf Anfrage",
+  "pi3": "<strong>Abreise:</strong> bis 11:00 Uhr",
+  "pi4": "<strong>Belegung:</strong> 2 bis 4 Personen",
+  "pi5": "<strong>Endreinigung:</strong> inklusive",
+  "pi6": "<strong>Dokumente:</strong> Ausweis bei der Anreise erforderlich",
+  "pi7": "<strong>CIN:</strong> IT099014C2Y8SXKPF8",
+  "pi8": "<strong>Zahlung:</strong> wird direkt mit Lisa vereinbart",
+  "rg1": "Anreise ab 15:00 Uhr, Abreise bis 11:00 Uhr",
+  "rg2": "Ruhezeit von 23:00 bis 8:00 Uhr einhalten",
+  "rg3": "Die Wohnung so sorgsam behandeln wie die eigene",
+  "rg4": "Schäden oder Probleme bitte sofort melden",
+  "rg5": "Im Innenbereich nicht rauchen (auf dem Balkon erlaubt)",
+  "rg6": "Keine Feiern ohne vorherige Absprache",
+  "rg7": "Die Höchstzahl von 4 Gästen nicht überschreiten",
+  "ct1": "Anrufen oder über WhatsApp schreiben",
+  "ct2": "Eine E-Mail schreiben",
+  "ct3": "Airbnb-Profil",
+  "c_addr": "📍 Via Pomezia 2, Rimini",
+  "ph_nome": "Ihr Vorname",
+  "ph_cognome": "Nachname",
+  "ph_email": "name@beispiel.de",
+  "ph_tel": "+49 ...",
+  "ph_note": "Z. B. späte Anreise, kleine Kinder ...",
+  "op2": "2 Personen",
+  "op3": "3 Personen",
+  "op4": "4 Personen",
+  "gl1": "Sonnenuntergang über dem Meer",
+  "gl2": "Panoramablick",
+  "gl3": "Balkon in Blüte",
+  "gl4": "Außenansicht · Meer und Promenade",
+  "gl5": "Wohnzimmer",
+  "gl6": "Eingang",
+  "gl7": "Weiter Blick",
+  "gl8": "Willkommensgruß",
+  "gl9": "Smart-TV · Netflix",
+  "gl10": "Komplette Küche",
+  "gl11": "Meerblick aus der Küche",
+  "gl12": "Frühstück mit Aussicht",
+  "gl13": "Doppelzimmer",
+  "gl14": "Smart-TV im Schlafzimmer",
+  "gl15": "Meerblick aus dem Schlafzimmer",
+  "gl16": "Etagenbett",
+  "gl17": "Kinderzimmer",
+  "gl18": "Komplettes Badezimmer",
+  "gl19": "Dusche und Waschbecken",
+  "foot": "© 2025 <strong>Verde Mare</strong> · Ferienwohnung · Rimini · Alle Rechte vorbehalten",
+  "js_err": "Es ist ein Problem aufgetreten. Bitte versuchen Sie es erneut oder kontaktieren Sie uns direkt über WhatsApp.",
+  "js_sending": "Wird gesendet ..."
  }
 };
 let LANG = 'it';
