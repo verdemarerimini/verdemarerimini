@@ -31,4 +31,22 @@
     <xhtml:link rel="alternate" hreflang="de" href="https://www.verdemarerimini.it/de/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://www.verdemarerimini.it/"/>
   </url>
+  <url>
+    <loc>https://www.verdemarerimini.it/privacy/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.verdemarerimini.it/en/privacy/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://www.verdemarerimini.it/de/privacy/</loc>
+    <lastmod>2026-10-29</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.3</priority>
+  </url>
 </urlset>
