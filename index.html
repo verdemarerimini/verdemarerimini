@@ -311,7 +311,7 @@
           "name": "Come si raggiunge l'appartamento?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "La stazione di Miramare è a sette minuti a piedi, la stazione centrale di Rimini a quindici minuti di macchina o dieci in autobus con la linea 11. L'aeroporto di Rimini dista cinque minuti in taxi. La fermata dell'autobus numero 30 è a cinquanta metri, davanti al palazzo."
+            "text": "La stazione di Miramare è a sette minuti a piedi, la stazione centrale di Rimini a quindici minuti di macchina o dieci in autobus con la linea 11. L'aeroporto di Rimini dista cinque minuti in taxi. La fermata dell'autobus numero 30 è a cinquanta metri, davanti al condominio."
           }
         },
         {
@@ -361,13 +361,14 @@
 
   /* HERO */
   .hero { min-height:100vh; display:grid; grid-template-columns:1fr 1fr; padding-top:64px; }
-  .hero-text { display:flex; flex-direction:column; justify-content:center; padding:80px 60px 80px 80px; }
-  .hero-eyebrow { font-size:.75rem; letter-spacing:.2em; text-transform:uppercase; color:var(--verde); font-weight:500; margin-bottom:20px; }
+  .hero-text { display:flex; flex-direction:column; justify-content:center; padding:56px 60px 56px 80px; }
+  .hero-eyebrow { font-size:.75rem; letter-spacing:.2em; text-transform:uppercase; color:var(--verde); font-weight:500; margin-bottom:14px; }
   .hero-title { font-family:'Cormorant Garamond',serif; font-size:4.5rem; line-height:1.1; font-weight:400; margin-bottom:8px; }
   .hero-title em { font-style:italic; color:var(--verde); }
-  .hero-subtitle { font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--sea); font-style:italic; margin-bottom:28px; }
-  .hero-desc { font-size:1rem; color:var(--text-mid); max-width:440px; margin-bottom:36px; line-height:1.8; }
-  .hero-badges { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:36px; }
+  .hero-subtitle { font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--sea); font-style:italic; margin-bottom:20px; }
+  .hero-desc { font-size:1rem; color:var(--text-mid); max-width:440px; margin-bottom:14px; line-height:1.8; }
+  .hero-desc:last-of-type { margin-bottom:28px; }
+  .hero-badges { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:28px; }
   .badge { background:var(--verde-pale); color:var(--verde); padding:6px 14px; border-radius:20px; font-size:.78rem; font-weight:500; }
   .btn-primary { display:inline-block; background:var(--verde); color:white; padding:13px 32px; border-radius:4px; text-decoration:none; font-weight:500; font-size:.9rem; transition:all .2s; margin-right:12px; }
   .btn-primary:hover { background:#5a8a79; transform:translateY(-1px); }
@@ -453,6 +454,7 @@
   .fg-consent a { color:var(--verde); }
   .btn-submit { width:100%; padding:13px; background:var(--verde); color:white; border:none; border-radius:6px; font-family:'DM Sans',sans-serif; font-size:.95rem; font-weight:500; cursor:pointer; transition:background .2s; margin-top:6px; }
   .btn-submit:hover { background:#5a8a79; }
+  .form-disclaimer { font-family:'DM Sans',sans-serif; font-size:.74rem; line-height:1.55; color:#8a8a8a; text-align:center; margin-top:8px; }
   .form-note { font-size:.78rem; color:var(--text-mid); text-align:center; margin-top:10px; }
   .form-success { display:none; text-align:center; padding:40px 20px; }
   .form-success .check { font-size:2.8rem; margin-bottom:14px; }
@@ -555,11 +557,11 @@
   <div class="nav-right">
   <ul>
     <li><a href="#appartamento" data-i18n="nav_apt">L'Appartamento</a></li>
-    <li><a href="#prenotazione" data-i18n="nav_pren">Prenota</a></li>
+    <li><a href="#prenotazione" data-i18n="nav_pren">Disponibilità</a></li>
     <li><a href="#guida" data-i18n="nav_guida">Guida Rimini</a></li>
     <li><a href="#faq" data-i18n="nav_faq">Domande</a></li>
     <li><a href="#contatti" data-i18n="nav_cont">Contatti</a></li>
-    <li><a href="#prenotazione" class="nav-cta" data-i18n="nav_cta">Prenota ora</a></li>
+    <li><a href="#prenotazione" class="nav-cta" data-i18n="nav_cta">Richiedi disponibilità</a></li>
   </ul>
   <div class="lang-switch" role="group" aria-label="Lingua / Language"><span class="active" aria-current="true">IT</span><a href="/en/" hreflang="en">EN</a><a href="/de/" hreflang="de">DE</a></div>
   </div>
@@ -572,6 +574,7 @@
     <h1 class="hero-title">Verde<em>Mare</em></h1>
     <p class="hero-subtitle" data-i18n="hero_subtitle">Il tuo angolo di Rimini, a due passi dal mare</p>
     <p class="hero-desc" data-i18n="hero_desc">Un appartamento rinnovato con cura, dove ogni mattina puoi sentirti già in vacanza. Vista sul lungomare, aria di casa, tutto il comfort che ti serve per goderti Rimini davvero.</p>
+    <p class="hero-desc" data-i18n="hero_desc2">A cinque chilometri dal centro di Rimini e da Riccione, con la fermata dell'autobus davanti al condominio — anche per la Fiera — e stazione e Metromare a pochi minuti. Due camere, entrambe con vista mare: va bene per una famiglia, per una coppia o per chi viaggia per lavoro.</p>
     <div class="hero-badges">
       <span class="badge" data-i18n="hero_b1">🌅 Vista mare</span>
       <span class="badge" data-i18n="hero_b2">🛏️ 2 Camere</span>
@@ -583,7 +586,7 @@
       <span class="badge" data-i18n="hero_b7">✨ Appena rinnovato</span>
     </div>
     <div>
-      <a href="#prenotazione" class="btn-primary" data-i18n="hero_cta1">Prenota ora</a>
+      <a href="#prenotazione" class="btn-primary" data-i18n="hero_cta1">Richiedi disponibilità</a>
       <a href="#galleria" class="btn-secondary" data-i18n="hero_cta2">Scopri l'appartamento</a>
     </div>
   </div>
@@ -790,8 +793,8 @@
 <!-- PRENOTAZIONE -->
 <section id="prenotazione">
   <div class="section-header">
-    <p class="section-eyebrow" data-i18n="pren_eyebrow">Prenota</p>
-    <h2 class="section-title" data-i18n="pren_title">Riserva il tuo soggiorno</h2>
+    <p class="section-eyebrow" data-i18n="pren_eyebrow">Disponibilità</p>
+    <h2 class="section-title" data-i18n="pren_title">Richiedi il tuo soggiorno</h2>
     <p class="section-desc" data-i18n="pren_desc">Compila il modulo e Lisa ti risponderà entro poche ore per confermare disponibilità e dettagli.</p>
   </div>
   <div class="pren-wrap">
@@ -831,7 +834,7 @@
           </div>
           <div class="fg"><label data-i18n="f_note">Note o richieste</label><textarea rows="3" name="note" placeholder="Es. arrivo in tarda serata, bambini piccoli..." data-i18n-ph="ph_note"></textarea></div>
           <div class="fg fg-consent"><label><input type="checkbox" name="privacy" value="accettata" required><span>Ho letto l'<a href="/privacy/" target="_blank" rel="noopener">informativa sulla privacy</a> e acconsento al trattamento dei miei dati per ricevere una risposta a questa richiesta.</span></label></div><button type="submit" class="btn-submit" id="submit-btn" data-i18n="f_btn">Invia richiesta</button>
-          <p class="form-note" data-i18n="f_note2">Lisa ti risponderà entro poche ore 🌿</p>
+          <p class="form-note" data-i18n="f_note2">Lisa ti risponderà entro poche ore 🌿</p><p class="form-disclaimer">L'invio del modulo non è una prenotazione: Lisa ti conferma disponibilità e condizioni prima di confermare il soggiorno.</p>
         </div>
       </form>
       <div class="form-success" id="form-success">
@@ -966,7 +969,7 @@
     </div>
     <div class="faq-item">
       <h3 data-i18n="f8_q">Come si raggiunge l'appartamento?</h3>
-      <p data-i18n="f8_a">La stazione di Miramare è a sette minuti a piedi, la stazione centrale di Rimini a quindici minuti di macchina o dieci in autobus con la linea 11. L'aeroporto di Rimini dista cinque minuti in taxi. La fermata dell'autobus numero 30 è a cinquanta metri, davanti al palazzo.</p>
+      <p data-i18n="f8_a">La stazione di Miramare è a sette minuti a piedi, la stazione centrale di Rimini a quindici minuti di macchina o dieci in autobus con la linea 11. L'aeroporto di Rimini dista cinque minuti in taxi. La fermata dell'autobus numero 30 è a cinquanta metri, davanti al condominio.</p>
     </div>
     <div class="faq-item">
       <h3 data-i18n="f9_q">Come si prenota?</h3>
