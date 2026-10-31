@@ -565,7 +565,10 @@
     .hero-m-feat { display:grid; grid-template-columns:repeat(3,1fr); gap:4px; padding:15px 0 16px; border-top:1px solid rgba(107,158,140,.22); border-bottom:1px solid rgba(107,158,140,.22); margin-bottom:22px; }
     .hero-m-feat div { display:flex; flex-direction:column; align-items:center; gap:7px; text-align:center; font-size:.755rem; line-height:1.3; color:var(--text-mid); }
     .hero-m-feat svg { width:21px; height:21px; stroke:var(--verde); fill:none; stroke-width:1.35; stroke-linecap:round; stroke-linejoin:round; color:var(--verde); }
-    .hero-m .btn-secondary { display:block; text-align:center; padding:13px 20px; }
+    .hero-m .btn-secondary { display:block; width:100%; text-align:center;
+      background:#6b9e8c; border:1.5px solid #6b9e8c; color:#fff;
+      padding:15px 22px; border-radius:6px; font-size:.95rem; font-weight:500; letter-spacing:.01em; }
+    .hero-m .btn-secondary:hover, .hero-m .btn-secondary:active { background:#5a8a79; border-color:#5a8a79; color:#fff; }
     /* --- menu mobile --- */
     .nav-toggle { display:flex; align-items:center; justify-content:center; width:34px; height:34px; border:1px solid rgba(107,158,140,.35); border-radius:8px; cursor:pointer; flex-shrink:0; }
     .nav-toggle i { display:block; width:15px; height:1.5px; background:var(--charcoal); position:relative; }
