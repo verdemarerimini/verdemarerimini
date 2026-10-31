@@ -12,27 +12,27 @@
 <link rel="alternate" hreflang="x-default" href="https://www.verdemarerimini.it/privacy/">
 <link href="/fonts/fonts.css" rel="stylesheet">
 <style>
-  :root { --verde:#6b9e8c; --verde-pale:#e8f0ed; --sand:#f5f0e8; --warm-white:#fdfcf9; --charcoal:#2d2d2d; --text-mid:#555; --sea:#4a8fa8; }
+  :root { --verde:#6b9e8c; --verde-dark:#467363; --verde-hover:#3a6153; --verde-pale:#e8f0ed; --sand:#f5f0e8; --warm-white:#fdfcf9; --charcoal:#2d2d2d; --text-mid:#555; --sea:#4a8fa8; }
   * { margin:0; padding:0; box-sizing:border-box; }
   body { font-family:'DM Sans',sans-serif; background:var(--warm-white); color:var(--charcoal); line-height:1.75; font-size:16px; }
   header { border-bottom:1px solid rgba(107,158,140,0.2); padding:20px 24px; display:flex; align-items:center; justify-content:space-between; gap:16px; flex-wrap:wrap; }
-  .logo { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:600; color:var(--verde); text-decoration:none; }
+  .logo { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:600; color:var(--verde-dark); text-decoration:none; }
   .logo span { color:var(--sea); font-style:italic; }
   .back { font-size:.82rem; letter-spacing:.06em; text-transform:uppercase; color:var(--text-mid); text-decoration:none; }
-  .back:hover { color:var(--verde); }
+  .back:hover { color:var(--verde-dark); }
   main { max-width:760px; margin:0 auto; padding:56px 24px 72px; }
   h1 { font-family:'Cormorant Garamond',serif; font-size:2.6rem; font-weight:400; margin-bottom:18px; line-height:1.15; }
-  h2 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:var(--verde); font-weight:600; margin:38px 0 10px; }
+  h2 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; color:var(--verde-dark); font-weight:600; margin:38px 0 10px; }
   p { color:var(--text-mid); margin-bottom:12px; }
   .lead { font-size:1.05rem; color:var(--charcoal); margin-bottom:8px; }
   ul { margin:6px 0 14px 20px; color:var(--text-mid); }
   li { margin-bottom:8px; }
-  a { color:var(--verde); }
+  a { color:var(--verde-dark); }
   strong { color:var(--charcoal); }
-  .date { margin-top:34px; padding-top:16px; border-top:1px solid rgba(107,158,140,0.25); font-size:.85rem; opacity:.75; }
+  .date { margin-top:34px; padding-top:16px; border-top:1px solid rgba(107,158,140,0.25); font-size:.85rem; color:#5f5f5f; }
   footer { background:var(--sand); padding:28px 24px; text-align:center; font-size:.82rem; color:var(--text-mid); }
   .foot-links { display:block; margin-top:8px; font-size:.78rem; }
-  .foot-links a { color:inherit; opacity:.85; }
+  .foot-links a { color:inherit; }
   table.ck-tab { width:100%; border-collapse:collapse; margin:10px 0 18px; font-size:.84rem; }
   table.ck-tab th, table.ck-tab td { text-align:left; vertical-align:top; padding:9px 10px; border-bottom:1px solid rgba(107,158,140,.22); }
   table.ck-tab th { font-weight:600; color:var(--charcoal); background:var(--verde-pale); }
@@ -53,13 +53,13 @@
   }
   #ck-banner h2 { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; color:var(--charcoal); margin-bottom:7px; }
   #ck-banner p { font-size:.86rem; line-height:1.62; color:var(--text-mid); margin-bottom:15px; }
-  #ck-banner p a, #ck-prefs p a { color:var(--verde); }
+  #ck-banner p a, #ck-prefs p a { color:var(--verde-dark); }
   .ck-actions { display:flex; flex-wrap:wrap; gap:9px; }
   .ck-btn { flex:1 1 150px; min-height:42px; padding:11px 16px; border-radius:6px; font-family:'DM Sans',sans-serif;
     font-size:.85rem; font-weight:500; cursor:pointer; text-align:center; border:1.5px solid var(--verde); transition:all .2s; }
-  .ck-accept { background:var(--verde); color:#fff; }
-  .ck-accept:hover { background:#5a8a79; border-color:#5a8a79; }
-  .ck-reject { background:var(--warm-white); color:var(--verde); }
+  .ck-accept { background:var(--verde-dark); color:#fff; }
+  .ck-accept:hover { background:var(--verde-hover); border-color:var(--verde-hover); }
+  .ck-reject { background:var(--warm-white); color:var(--verde-dark); }
   .ck-reject:hover { background:var(--verde-pale); }
   .ck-custom { background:var(--warm-white); color:var(--text-mid); border-color:#d9d5cc; }
   .ck-custom:hover { border-color:var(--text-mid); }
@@ -70,7 +70,7 @@
   .ck-opt-head { display:flex; align-items:center; justify-content:space-between; gap:12px; }
   .ck-opt-head strong { font-size:.92rem; font-weight:600; color:var(--charcoal); }
   .ck-opt p { font-size:.82rem; line-height:1.6; color:var(--text-mid); margin-top:6px; }
-  .ck-fixed { font-size:.76rem; letter-spacing:.06em; text-transform:uppercase; color:var(--verde); white-space:nowrap; }
+  .ck-fixed { font-size:.76rem; letter-spacing:.06em; text-transform:uppercase; color:var(--verde-dark); white-space:nowrap; }
   .ck-switch input { width:18px; height:18px; accent-color:var(--verde); cursor:pointer; }
   .ck-panel .ck-actions { margin-top:20px; }
   @media(max-width:600px){
@@ -151,8 +151,8 @@
       <p>They make the site work and remember this choice. They cannot be switched off.</p>
     </div>
     <div class="ck-opt">
-      <div class="ck-opt-head"><strong>Statistical cookies</strong>
-        <label class="ck-switch"><input type="checkbox" id="ck-stats"></label>
+      <div class="ck-opt-head"><strong id="ck-stats-lab">Statistical cookies</strong>
+        <label class="ck-switch"><input type="checkbox" id="ck-stats" aria-labelledby="ck-stats-lab"></label>
       </div>
       <p>Google Analytics. They tell us how many people visit the site and which pages they read. They are optional.</p>
     </div>

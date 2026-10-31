@@ -331,6 +331,8 @@
 <style>
   :root {
     --verde: #6b9e8c;
+    --verde-dark: #467363;   /* stesso salvia, abbastanza scuro per WCAG AA */
+    --verde-hover: #3a6153;
     --verde-light: #a8c5b8;
     --verde-pale: #e8f0ed;
     --sand: #f5f0e8;
@@ -338,6 +340,7 @@
     --charcoal: #2d2d2d;
     --text-mid: #555;
     --sea: #4a8fa8;
+    --sea-dark: #317b94;   /* stesso azzurro, leggibile sul fondo chiaro */
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior: smooth; }
@@ -351,28 +354,28 @@
     display:flex; align-items:center; justify-content:space-between;
     padding:0 40px; height:64px;
   }
-  .nav-logo { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:600; color:var(--verde); letter-spacing:.02em; }
+  .nav-logo { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:600; color:var(--verde-dark); letter-spacing:.02em; }
   .nav-logo span { color:var(--sea); font-style:italic; }
   nav ul { list-style:none; display:flex; gap:28px; }
   nav ul li a { text-decoration:none; color:var(--charcoal); font-size:.82rem; letter-spacing:.08em; text-transform:uppercase; font-weight:500; transition:color .2s; }
-  nav ul li a:hover { color:var(--verde); }
-  .nav-cta { background:var(--verde) !important; color:white !important; padding:8px 20px; border-radius:4px; }
-  .nav-cta:hover { background:#5a8a79 !important; }
+  nav ul li a:hover { color:var(--verde-dark); }
+  .nav-cta { background:var(--verde-dark) !important; color:white !important; padding:8px 20px; border-radius:4px; }
+  .nav-cta:hover { background:var(--verde-hover) !important; }
 
   /* HERO */
   .hero { min-height:100vh; display:grid; grid-template-columns:1fr 1fr; padding-top:64px; }
   .hero-text { display:flex; flex-direction:column; justify-content:center; padding:56px 60px 56px 80px; }
-  .hero-eyebrow { font-size:.75rem; letter-spacing:.2em; text-transform:uppercase; color:var(--verde); font-weight:500; margin-bottom:14px; }
+  .hero-eyebrow { font-size:.75rem; letter-spacing:.2em; text-transform:uppercase; color:var(--verde-dark); font-weight:500; margin-bottom:14px; }
   .hero-title { font-family:'Cormorant Garamond',serif; font-size:4.5rem; line-height:1.1; font-weight:400; margin-bottom:8px; }
-  .hero-title em { font-style:italic; color:var(--verde); }
-  .hero-subtitle { font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--sea); font-style:italic; margin-bottom:20px; }
+  .hero-title em { font-style:italic; color:var(--verde-dark); }
+  .hero-subtitle { font-family:'Cormorant Garamond',serif; font-size:1.4rem; color:var(--sea-dark); font-style:italic; margin-bottom:20px; }
   .hero-desc { font-size:1rem; color:var(--text-mid); max-width:440px; margin-bottom:14px; line-height:1.8; }
   .hero-desc:last-of-type { margin-bottom:28px; }
   .hero-badges { display:flex; flex-wrap:wrap; gap:10px; margin-bottom:28px; }
-  .badge { background:var(--verde-pale); color:var(--verde); padding:6px 14px; border-radius:20px; font-size:.78rem; font-weight:500; }
-  .btn-primary { display:inline-block; background:var(--verde); color:white; padding:13px 32px; border-radius:4px; text-decoration:none; font-weight:500; font-size:.9rem; transition:all .2s; margin-right:12px; }
-  .btn-primary:hover { background:#5a8a79; transform:translateY(-1px); }
-  .btn-secondary { display:inline-block; border:1.5px solid var(--verde); color:var(--verde); padding:13px 32px; border-radius:4px; text-decoration:none; font-size:.9rem; transition:all .2s; }
+  .badge { background:var(--verde-pale); color:var(--verde-dark); padding:6px 14px; border-radius:20px; font-size:.78rem; font-weight:500; }
+  .btn-primary { display:inline-block; background:var(--verde-dark); color:white; padding:13px 32px; border-radius:4px; text-decoration:none; font-weight:500; font-size:.9rem; transition:all .2s; margin-right:12px; }
+  .btn-primary:hover { background:var(--verde-hover); transform:translateY(-1px); }
+  .btn-secondary { display:inline-block; border:1.5px solid var(--verde-dark); color:var(--verde-dark); padding:13px 32px; border-radius:4px; text-decoration:none; font-size:.9rem; transition:all .2s; }
   .btn-secondary:hover { background:var(--verde-pale); }
   .hero-gallery { position:relative; overflow:hidden; }
   .hero-gallery img { width:100%; height:100%; object-fit:cover; transition:transform 8s ease; }
@@ -388,7 +391,7 @@
   /* SECTION COMMONS */
   section { scroll-margin-top:64px; }
   .section-header { text-align:center; padding:72px 40px 44px; }
-  .section-eyebrow { font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--verde); font-weight:500; margin-bottom:14px; }
+  .section-eyebrow { font-size:.72rem; letter-spacing:.22em; text-transform:uppercase; color:var(--verde-dark); font-weight:500; margin-bottom:14px; }
   .section-title { font-family:'Cormorant Garamond',serif; font-size:2.8rem; font-weight:400; margin-bottom:14px; }
   .section-desc { color:var(--text-mid); max-width:540px; margin:0 auto; }
 
@@ -429,7 +432,7 @@
   .dotazioni { display:grid; grid-template-columns:repeat(4,1fr); gap:20px; padding:0 40px 72px; max-width:1200px; margin:0 auto; }
   .dot-card { background:var(--verde-pale); border-radius:8px; padding:24px 20px; text-align:center; }
   .dot-icon { font-size:1.8rem; margin-bottom:10px; }
-  .dot-card h4 { font-family:'Cormorant Garamond',serif; font-size:1.1rem; margin-bottom:6px; }
+  .dot-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.1rem; font-weight:600; margin-bottom:6px; }
   .dot-card p { font-size:.82rem; color:var(--text-mid); }
 
   /* PRENOTAZIONE */
@@ -440,7 +443,7 @@
   .pren-info ul li { padding:11px 0; border-bottom:1px solid rgba(107,158,140,0.2); display:flex; gap:10px; font-size:.92rem; color:var(--text-mid); }
   .pren-quote { background:var(--verde-pale); border-radius:8px; padding:20px; border-left:3px solid var(--verde); margin-top:24px; }
   .pren-quote p { font-family:'Cormorant Garamond',serif; font-size:1.05rem; font-style:italic; }
-  .pren-quote span { font-size:.82rem; color:var(--verde); font-weight:500; margin-top:6px; display:block; }
+  .pren-quote span { font-size:.82rem; color:var(--verde-dark); font-weight:500; margin-top:6px; display:block; }
   .pren-form { background:var(--warm-white); border-radius:12px; padding:36px; box-shadow:0 4px 40px rgba(0,0,0,0.06); }
   .pren-form h3 { font-family:'Cormorant Garamond',serif; font-size:1.4rem; margin-bottom:22px; }
   .fg { margin-bottom:18px; }
@@ -451,10 +454,10 @@
   .fg-consent { margin:4px 0 16px; }
   .fg-consent label { display:flex; align-items:flex-start; gap:9px; text-transform:none; letter-spacing:0; font-size:.82rem; line-height:1.55; color:var(--text-mid); margin:0; font-weight:400; }
   .fg-consent input { width:auto; flex-shrink:0; margin-top:3px; accent-color:var(--verde); }
-  .fg-consent a { color:var(--verde); }
-  .btn-submit { width:100%; padding:13px; background:var(--verde); color:white; border:none; border-radius:6px; font-family:'DM Sans',sans-serif; font-size:.95rem; font-weight:500; cursor:pointer; transition:background .2s; margin-top:6px; }
-  .btn-submit:hover { background:#5a8a79; }
-  .form-disclaimer { font-family:'DM Sans',sans-serif; font-size:.74rem; line-height:1.55; color:#8a8a8a; text-align:center; margin-top:8px; }
+  .fg-consent a { color:var(--verde-dark); }
+  .btn-submit { width:100%; padding:13px; background:var(--verde-dark); color:white; border:none; border-radius:6px; font-family:'DM Sans',sans-serif; font-size:.95rem; font-weight:500; cursor:pointer; transition:background .2s; margin-top:6px; }
+  .btn-submit:hover { background:var(--verde-hover); }
+  .form-disclaimer { font-family:'DM Sans',sans-serif; font-size:.74rem; line-height:1.55; color:#6e6e6e; text-align:center; margin-top:8px; }
   .form-note { font-size:.78rem; color:var(--text-mid); text-align:center; margin-top:10px; }
   .form-success { display:none; text-align:center; padding:40px 20px; }
   .form-success .check { font-size:2.8rem; margin-bottom:14px; }
@@ -466,25 +469,25 @@
   .guida-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:24px; padding:0 40px 72px; max-width:1200px; margin:0 auto; }
   .guida-card { border-radius:10px; overflow:hidden; border:1px solid rgba(107,158,140,0.15); transition:box-shadow .3s,transform .3s; }
   .guida-card:hover { box-shadow:0 10px 36px rgba(107,158,140,0.18); transform:translateY(-3px); }
-  .gc-head { background:var(--verde); padding:20px 24px; display:flex; align-items:center; gap:14px; }
-  .gc-head .icon { font-size:1.8rem; }
+  .gc-head { background:var(--verde-dark); padding:20px 24px; display:flex; align-items:center; gap:14px; }
+  .gc-head .icon { font-size:1.8rem; color:#fff; }
   .gc-head h3 { font-family:'Cormorant Garamond',serif; color:white; font-size:1.35rem; }
   .gc-body { padding:20px 24px; }
   .gc-body ul { list-style:none; }
   .gc-body ul li { padding:7px 0; border-bottom:1px solid var(--verde-pale); font-size:.88rem; color:var(--text-mid); display:flex; gap:8px; }
   .gc-body ul li:last-child { border-bottom:none; }
-  .gc-body ul li::before { content:"›"; color:var(--verde); font-weight:bold; }
+  .gc-body ul li::before { content:"›"; color:var(--verde-dark); font-weight:bold; }
 
   /* REGOLE */
-  .regole { background:var(--verde); padding:56px 80px; }
+  .regole { background:var(--verde-dark); padding:56px 80px; }
   .regole-inner { max-width:1120px; margin:0 auto; display:grid; grid-template-columns:1fr 1fr; gap:56px; align-items:start; }
   .regole h2 { font-family:'Cormorant Garamond',serif; font-size:2.2rem; color:white; margin-bottom:14px; }
-  .regole p { color:rgba(255,255,255,.8); line-height:1.8; }
+  .regole p { color:#fff; line-height:1.8; }
   .regole-list { list-style:none; }
   .regole-list li { display:flex; gap:10px; padding:11px 0; border-bottom:1px solid rgba(255,255,255,.15); color:rgba(255,255,255,.9); font-size:.92rem; }
   .regole-list li:last-child { border-bottom:none; }
-  .ok { color:#a8e6cf; }
-  .no { color:#ffb3b3; }
+  .ok { color:#dcf7ea; }
+  .no { color:#ffeaea; }
 
   /* CONTATTI */
   #contatti { background:var(--sand); }
@@ -492,7 +495,7 @@
   .host-card { background:var(--warm-white); border-radius:12px; padding:44px 36px; text-align:center; box-shadow:0 4px 40px rgba(0,0,0,0.06); }
   .host-avatar { width:72px; height:72px; border-radius:50%; background:var(--verde); margin:0 auto 18px; display:flex; align-items:center; justify-content:center; font-size:2.2rem; }
   .host-card h3 { font-family:'Cormorant Garamond',serif; font-size:1.9rem; margin-bottom:6px; }
-  .host-role { color:var(--verde); font-size:.82rem; letter-spacing:.1em; text-transform:uppercase; margin-bottom:18px; }
+  .host-role { color:var(--verde-dark); font-size:.82rem; letter-spacing:.1em; text-transform:uppercase; margin-bottom:18px; }
   .host-card blockquote { font-family:'Cormorant Garamond',serif; font-style:italic; font-size:1.05rem; color:var(--text-mid); line-height:1.8; margin-bottom:24px; }
   .contact-links { display:flex; flex-direction:column; gap:10px; }
   .contact-link { display:flex; align-items:center; gap:10px; padding:11px 18px; border-radius:6px; background:var(--verde-pale); text-decoration:none; color:var(--charcoal); font-size:.88rem; transition:background .2s; }
@@ -505,14 +508,14 @@
   .map-ph-t { font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:600; color:var(--charcoal); }
   .map-ph-d { font-size:.84rem; line-height:1.62; color:var(--text-mid); max-width:390px; }
   .map-ph-b { font-family:'DM Sans',sans-serif; font-size:.88rem; font-weight:500; letter-spacing:.01em;
-    padding:12px 26px; border-radius:6px; border:1.5px solid var(--verde); background:var(--verde); color:#fff;
+    padding:12px 26px; border-radius:6px; border:1.5px solid var(--verde-dark); background:var(--verde-dark); color:#fff;
     cursor:pointer; transition:background .2s, border-color .2s; }
-  .map-ph-b:hover, .map-ph-b:active { background:#5a8a79; border-color:#5a8a79; }
+  .map-ph-b:hover, .map-ph-b:active { background:var(--verde-hover); border-color:var(--verde-hover); }
   .map-ph-a { font-size:.78rem; color:var(--text-mid); }
-  .map-ph-a a { color:var(--verde); }
+  .map-ph-a a { color:var(--verde-dark); }
 
   /* FOOTER */
-  footer { background:var(--charcoal); color:rgba(255,255,255,.55); text-align:center; padding:28px; font-size:.78rem; letter-spacing:.05em; }
+  footer { background:var(--charcoal); color:rgba(255,255,255,.82); text-align:center; padding:28px; font-size:.78rem; letter-spacing:.05em; }
   footer strong { color:var(--verde-light); }
 
   /* MODAL */
@@ -545,7 +548,7 @@
   #faq { padding:72px 40px 8px; background:var(--warm-white); }
   .faq-grid { max-width:1100px; margin:44px auto 0; display:grid; grid-template-columns:1fr 1fr; gap:14px 28px; }
   .faq-item { border-top:1px solid rgba(107,158,140,0.25); padding:20px 0 4px; }
-  .faq-item h3 { font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--verde); margin-bottom:8px; font-weight:600; }
+  .faq-item h3 { font-family:'Cormorant Garamond',serif; font-size:1.3rem; color:var(--verde-dark); margin-bottom:8px; font-weight:600; }
   .faq-item p { font-size:.95rem; line-height:1.75; color:var(--text-mid); }
   .nav-right { display:flex; align-items:center; gap:26px; }
   .lang-switch { display:flex; align-items:center; gap:2px; border:1px solid rgba(107,158,140,.35); border-radius:999px; padding:3px; }
@@ -555,11 +558,11 @@
     padding:4px 11px; border-radius:999px; transition:all .2s;
     text-decoration:none; display:inline-block;
   }
-  .lang-switch a:hover { color:var(--verde); }
-  .lang-switch span.active { background:var(--verde); color:#fff; }
+  .lang-switch a:hover { color:var(--verde-dark); }
+  .lang-switch span.active { background:var(--verde-dark); color:#fff; }
 
   .hero-m { display:none; }
-  .nav-toggle, .nav-toggle-cb { display:none; }
+  .nav-toggle { display:none; }
 
   /* --- consenso cookie --- */
   #ck-banner, #ck-prefs { display:none; font-family:'DM Sans',sans-serif; }
@@ -574,13 +577,13 @@
   }
   #ck-banner h2 { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; color:var(--charcoal); margin-bottom:7px; }
   #ck-banner p { font-size:.86rem; line-height:1.62; color:var(--text-mid); margin-bottom:15px; }
-  #ck-banner p a, #ck-prefs p a { color:var(--verde); }
+  #ck-banner p a, #ck-prefs p a { color:var(--verde-dark); }
   .ck-actions { display:flex; flex-wrap:wrap; gap:9px; }
   .ck-btn { flex:1 1 150px; min-height:42px; padding:11px 16px; border-radius:6px; font-family:'DM Sans',sans-serif;
     font-size:.85rem; font-weight:500; cursor:pointer; text-align:center; border:1.5px solid var(--verde); transition:all .2s; }
-  .ck-accept { background:var(--verde); color:#fff; }
-  .ck-accept:hover { background:#5a8a79; border-color:#5a8a79; }
-  .ck-reject { background:var(--warm-white); color:var(--verde); }
+  .ck-accept { background:var(--verde-dark); color:#fff; }
+  .ck-accept:hover { background:var(--verde-hover); border-color:var(--verde-hover); }
+  .ck-reject { background:var(--warm-white); color:var(--verde-dark); }
   .ck-reject:hover { background:var(--verde-pale); }
   .ck-custom { background:var(--warm-white); color:var(--text-mid); border-color:#d9d5cc; }
   .ck-custom:hover { border-color:var(--text-mid); }
@@ -591,7 +594,7 @@
   .ck-opt-head { display:flex; align-items:center; justify-content:space-between; gap:12px; }
   .ck-opt-head strong { font-size:.92rem; font-weight:600; color:var(--charcoal); }
   .ck-opt p { font-size:.82rem; line-height:1.6; color:var(--text-mid); margin-top:6px; }
-  .ck-fixed { font-size:.76rem; letter-spacing:.06em; text-transform:uppercase; color:var(--verde); white-space:nowrap; }
+  .ck-fixed { font-size:.76rem; letter-spacing:.06em; text-transform:uppercase; color:var(--verde-dark); white-space:nowrap; }
   .ck-switch input { width:18px; height:18px; accent-color:var(--verde); cursor:pointer; }
   .ck-panel .ck-actions { margin-top:20px; }
   @media(max-width:600px){
@@ -635,21 +638,21 @@
     .hero-m-feat div { display:flex; flex-direction:column; align-items:center; gap:7px; text-align:center; font-size:.755rem; line-height:1.3; color:var(--text-mid); }
     .hero-m-feat svg { width:21px; height:21px; stroke:var(--verde); fill:none; stroke-width:1.35; stroke-linecap:round; stroke-linejoin:round; color:var(--verde); }
     .hero-m .btn-secondary { display:block; width:100%; text-align:center;
-      background:#6b9e8c; border:1.5px solid #6b9e8c; color:#fff;
+      background:var(--verde-dark); border:1.5px solid var(--verde-dark); color:#fff;
       padding:15px 22px; border-radius:6px; font-size:.95rem; font-weight:500; letter-spacing:.01em; }
-    .hero-m .btn-secondary:hover, .hero-m .btn-secondary:active { background:#5a8a79; border-color:#5a8a79; color:#fff; }
+    .hero-m .btn-secondary:hover, .hero-m .btn-secondary:active { background:var(--verde-hover); border-color:var(--verde-hover); color:#fff; }
     /* --- menu mobile --- */
-    .nav-toggle { display:flex; align-items:center; justify-content:center; width:34px; height:34px; border:1px solid rgba(107,158,140,.35); border-radius:8px; cursor:pointer; flex-shrink:0; }
+    .nav-toggle { display:flex; align-items:center; justify-content:center; width:34px; height:34px; border:1px solid rgba(70,115,99,.45); border-radius:8px; cursor:pointer; flex-shrink:0; background:none; padding:0; margin:0; font:inherit; color:inherit; -webkit-appearance:none; appearance:none; }
     .nav-toggle i { display:block; width:15px; height:1.5px; background:var(--charcoal); position:relative; }
     .nav-toggle i::before, .nav-toggle i::after { content:''; position:absolute; left:0; width:15px; height:1.5px; background:var(--charcoal); }
     .nav-toggle i::before { top:-5px; }
     .nav-toggle i::after { top:5px; }
     .nav-right { gap:13px; }
-    .nav-toggle-cb:checked ~ ul { display:flex; flex-direction:column; position:absolute; top:64px; left:0; right:0; background:#FDFCF9; border-bottom:1px solid rgba(107,158,140,.2); padding:4px 24px 18px; box-shadow:0 12px 26px rgba(0,0,0,.10); z-index:120; }
-    .nav-toggle-cb:checked ~ ul li { border-top:1px solid rgba(107,158,140,.14); }
-    .nav-toggle-cb:checked ~ ul li:first-child { border-top:0; }
-    .nav-toggle-cb:checked ~ ul li a { display:block; padding:13px 0; font-size:.78rem; }
-    .nav-toggle-cb:checked ~ ul li a.nav-cta { display:inline-block; margin-top:12px; padding:10px 22px; }
+    .nav-right.nav-open ul { display:flex; flex-direction:column; position:absolute; top:64px; left:0; right:0; background:#FDFCF9; border-bottom:1px solid rgba(107,158,140,.2); padding:4px 24px 18px; box-shadow:0 12px 26px rgba(0,0,0,.10); z-index:120; }
+    .nav-right.nav-open ul li { border-top:1px solid rgba(107,158,140,.14); }
+    .nav-right.nav-open ul li:first-child { border-top:0; }
+    .nav-right.nav-open ul li a { display:block; padding:13px 0; font-size:.78rem; }
+    .nav-right.nav-open ul li a.nav-cta { display:inline-block; margin-top:12px; padding:10px 22px; }
   }
 
   @media(max-width:400px){
@@ -662,8 +665,7 @@
 <nav>
   <div class="nav-logo">Verde<span>Mare</span></div>
   <div class="nav-right">
-  <input type="checkbox" id="navtoggle" class="nav-toggle-cb">
-  <ul>
+  <ul id="navmenu">
     <li><a href="#appartamento" data-i18n="nav_apt">L'Appartamento</a></li>
     <li><a href="#prenotazione" data-i18n="nav_pren">Disponibilità</a></li>
     <li><a href="#guida" data-i18n="nav_guida">Guida Rimini</a></li>
@@ -672,7 +674,7 @@
     <li><a href="#prenotazione" class="nav-cta" data-i18n="nav_cta">Richiedi disponibilità</a></li>
   </ul>
   <div class="lang-switch" role="group" aria-label="Lingua / Language"><span class="active" aria-current="true">IT</span><a href="/en/" hreflang="en">EN</a><a href="/de/" hreflang="de">DE</a></div>
-  <label for="navtoggle" class="nav-toggle" aria-label="Menu"><i></i></label>
+  <button type="button" id="navtoggle" class="nav-toggle" aria-label="Menu" aria-expanded="false" aria-controls="navmenu"><i></i></button>
   </div>
 </nav>
 
@@ -728,17 +730,17 @@
 
   <!-- DOTAZIONI -->
   <div class="dotazioni">
-    <div class="dot-card"><div class="dot-icon">🛏️</div><h4 data-i18n="d1_t">2 Camere</h4><p data-i18n="d1_p">Matrimoniale + cameretta con letto a castello. Fino a 4 ospiti.</p></div>
-    <div class="dot-card"><div class="dot-icon">🏖️</div><h4 data-i18n="d2_t">50 mt dal mare</h4><p data-i18n="d2_p">La spiaggia è letteralmente a un minuto a piedi dall'appartamento.</p></div>
-    <div class="dot-card"><div class="dot-icon">👶</div><h4 data-i18n="d3_t">Famiglie con bambini</h4><p data-i18n="d3_p">Giochi da spiaggia, giochi da tavolo, colori e libri per bambini. Su richiesta: culla e seggiolone.</p></div>
-    <div class="dot-card"><div class="dot-icon">📺</div><h4 data-i18n="d4_t">2 Smart TV</h4><p data-i18n="d4_p">Smart TV in soggiorno e in camera. Netflix incluso: accedi direttamente e goditi i tuoi contenuti preferiti.</p></div>
-    <div class="dot-card"><div class="dot-icon">❄️</div><h4 data-i18n="d5_t">Aria condizionata</h4><p data-i18n="d5_p">In ogni ambiente, per un comfort perfetto estate e inverno.</p></div>
-    <div class="dot-card"><div class="dot-icon">🍳</div><h4 data-i18n="d6_t">Cucina attrezzata</h4><p data-i18n="d6_p">Fornelli, frigorifero, freezer, forno, forno a microonde, servizio di piatti, bicchieri, posate e tutto il necessario per cucinare.</p></div>
-    <div class="dot-card"><div class="dot-icon">📶</div><h4 data-i18n="d7_t">WiFi gratuito</h4><p data-i18n="d7_p">Connessione veloce inclusa per tutta la durata del soggiorno.</p></div>
-    <div class="dot-card"><div class="dot-icon">🔐</div><h4 data-i18n="d8_t">Cassaforte</h4><p data-i18n="d8_p">Cassaforte in camera per la custodia dei valori in totale sicurezza.</p></div>
-    <div class="dot-card"><div class="dot-icon">☕</div><h4 data-i18n="d9_t">Angolo caffetteria</h4><p data-i18n="d9_p">Macchina Nespresso, montalatte, bollitore, tostapane e spremiagrumi. La colazione è di casa.</p></div>
-    <div class="dot-card"><div class="dot-icon">🅿️</div><h4 data-i18n="d10_t">Parcheggio estivo</h4><p data-i18n="d10_p">Posto auto riservato a 2 minuti, in area videosorvegliata H24 con personale. Accesso tramite tessera. Disponibile da maggio a settembre.</p></div>
-    <div class="dot-card"><div class="dot-icon">🅿️</div><h4 data-i18n="d11_t">Parcheggio invernale</h4><p data-i18n="d11_p">Puoi parcheggiare liberamente in strada oppure, gratuitamente, nell'area delimitata che si trova sul lato opposto rispetto al condominio.</p></div>
+    <div class="dot-card"><div class="dot-icon">🛏️</div><h3 data-i18n="d1_t">2 Camere</h3><p data-i18n="d1_p">Matrimoniale + cameretta con letto a castello. Fino a 4 ospiti.</p></div>
+    <div class="dot-card"><div class="dot-icon">🏖️</div><h3 data-i18n="d2_t">50 mt dal mare</h3><p data-i18n="d2_p">La spiaggia è letteralmente a un minuto a piedi dall'appartamento.</p></div>
+    <div class="dot-card"><div class="dot-icon">👶</div><h3 data-i18n="d3_t">Famiglie con bambini</h3><p data-i18n="d3_p">Giochi da spiaggia, giochi da tavolo, colori e libri per bambini. Su richiesta: culla e seggiolone.</p></div>
+    <div class="dot-card"><div class="dot-icon">📺</div><h3 data-i18n="d4_t">2 Smart TV</h3><p data-i18n="d4_p">Smart TV in soggiorno e in camera. Netflix incluso: accedi direttamente e goditi i tuoi contenuti preferiti.</p></div>
+    <div class="dot-card"><div class="dot-icon">❄️</div><h3 data-i18n="d5_t">Aria condizionata</h3><p data-i18n="d5_p">In ogni ambiente, per un comfort perfetto estate e inverno.</p></div>
+    <div class="dot-card"><div class="dot-icon">🍳</div><h3 data-i18n="d6_t">Cucina attrezzata</h3><p data-i18n="d6_p">Fornelli, frigorifero, freezer, forno, forno a microonde, servizio di piatti, bicchieri, posate e tutto il necessario per cucinare.</p></div>
+    <div class="dot-card"><div class="dot-icon">📶</div><h3 data-i18n="d7_t">WiFi gratuito</h3><p data-i18n="d7_p">Connessione veloce inclusa per tutta la durata del soggiorno.</p></div>
+    <div class="dot-card"><div class="dot-icon">🔐</div><h3 data-i18n="d8_t">Cassaforte</h3><p data-i18n="d8_p">Cassaforte in camera per la custodia dei valori in totale sicurezza.</p></div>
+    <div class="dot-card"><div class="dot-icon">☕</div><h3 data-i18n="d9_t">Angolo caffetteria</h3><p data-i18n="d9_p">Macchina Nespresso, montalatte, bollitore, tostapane e spremiagrumi. La colazione è di casa.</p></div>
+    <div class="dot-card"><div class="dot-icon">🅿️</div><h3 data-i18n="d10_t">Parcheggio estivo</h3><p data-i18n="d10_p">Posto auto riservato a 2 minuti, in area videosorvegliata H24 con personale. Accesso tramite tessera. Disponibile da maggio a settembre.</p></div>
+    <div class="dot-card"><div class="dot-icon">🅿️</div><h3 data-i18n="d11_t">Parcheggio invernale</h3><p data-i18n="d11_p">Puoi parcheggiare liberamente in strada oppure, gratuitamente, nell'area delimitata che si trova sul lato opposto rispetto al condominio.</p></div>
   </div>
 
   <!-- BALCONE -->
@@ -871,39 +873,39 @@
   <div style="display:grid; grid-template-columns:repeat(3,1fr); gap:24px; max-width:1100px; margin:48px auto 0; ">
 
     <div style="background:var(--sand); border-radius:16px; padding:32px 28px; display:flex; flex-direction:column; gap:16px;">
-      <div style="color:var(--verde); font-size:1rem; letter-spacing:2px;">★★★★★</div>
+      <div style="color:var(--verde-dark); font-size:1rem; letter-spacing:2px;">★★★★★</div>
       <p style="font-size:.97rem; line-height:1.7; color:var(--charcoal); font-style:italic;" data-i18n="rec1">"Appartamento stupendo con una splendida vista sul mare. La cucina è molto ben attrezzata e non manca nulla. L'appartamento invita a sentirsi a proprio agio e anche Lisa è sempre facilmente raggiungibile."</p>
-      <p style="font-size:.82rem; color:#888; margin-top:auto;">— Jana</p>
+      <p style="font-size:.82rem; color:#6b6b6b; margin-top:auto;">— Jana</p>
     </div>
 
     <div style="background:var(--sand); border-radius:16px; padding:32px 28px; display:flex; flex-direction:column; gap:16px;">
-      <div style="color:var(--verde); font-size:1rem; letter-spacing:2px;">★★★★★</div>
+      <div style="color:var(--verde-dark); font-size:1rem; letter-spacing:2px;">★★★★★</div>
       <p style="font-size:.97rem; line-height:1.7; color:var(--charcoal); font-style:italic;" data-i18n="rec2">"Tutto ciò di cui avevamo bisogno era disponibile. Lisa è una host fantastica, sempre premurosa e attenta. La vista sul mare è semplicemente perfetta. Ritorneremo sicuramente."</p>
-      <p style="font-size:.82rem; color:#888; margin-top:auto;">— Clara</p>
+      <p style="font-size:.82rem; color:#6b6b6b; margin-top:auto;">— Clara</p>
     </div>
 
     <div style="background:var(--sand); border-radius:16px; padding:32px 28px; display:flex; flex-direction:column; gap:16px;">
-      <div style="color:var(--verde); font-size:1rem; letter-spacing:2px;">★★★★★</div>
+      <div style="color:var(--verde-dark); font-size:1rem; letter-spacing:2px;">★★★★★</div>
       <p style="font-size:.97rem; line-height:1.7; color:var(--charcoal); font-style:italic;" data-i18n="rec3">"Lisa è un host fantastico; ha pensato a tutto. L'appartamento è esattamente come in foto: pulito, spazioso, accogliente e ben attrezzato. La vista sul mare è meravigliosa."</p>
-      <p style="font-size:.82rem; color:#888; margin-top:auto;">— Nóra</p>
+      <p style="font-size:.82rem; color:#6b6b6b; margin-top:auto;">— Nóra</p>
     </div>
 
     <div style="background:var(--sand); border-radius:16px; padding:32px 28px; display:flex; flex-direction:column; gap:16px;">
-      <div style="color:var(--verde); font-size:1rem; letter-spacing:2px;">★★★★★</div>
+      <div style="color:var(--verde-dark); font-size:1rem; letter-spacing:2px;">★★★★★</div>
       <p style="font-size:.97rem; line-height:1.7; color:var(--charcoal); font-style:italic;" data-i18n="rec4">"L'appartamento era accogliente, molto bello e soprattutto super pulito. La posizione è semplicemente perfetta: sia la spiaggia che tutte le infrastrutture sono facilmente raggiungibili. Assolutamente consigliato!"</p>
-      <p style="font-size:.82rem; color:#888; margin-top:auto;">— Anna</p>
+      <p style="font-size:.82rem; color:#6b6b6b; margin-top:auto;">— Anna</p>
     </div>
 
     <div style="background:var(--sand); border-radius:16px; padding:32px 28px; display:flex; flex-direction:column; gap:16px;">
-      <div style="color:var(--verde); font-size:1rem; letter-spacing:2px;">★★★★★</div>
+      <div style="color:var(--verde-dark); font-size:1rem; letter-spacing:2px;">★★★★★</div>
       <p style="font-size:.97rem; line-height:1.7; color:var(--charcoal); font-style:italic;" data-i18n="rec5">"Un appartamento con vista diretta sulla spiaggia e un ampio balcone. Pulito e perfettamente ordinato, accogliente al tempo stesso. Lisa è un'ospite fantastica e il suo alloggio è favoloso."</p>
-      <p style="font-size:.82rem; color:#888; margin-top:auto;">— Lukáš</p>
+      <p style="font-size:.82rem; color:#6b6b6b; margin-top:auto;">— Lukáš</p>
     </div>
 
     <div style="background:var(--verde-pale); border-radius:16px; padding:32px 28px; display:flex; flex-direction:column; align-items:center; justify-content:center; gap:12px; text-align:center;">
-      <div style="font-size:2.8rem; font-weight:700; color:var(--verde); font-family:'Cormorant Garamond',serif; line-height:1;">4,93</div>
+      <div style="font-size:2.8rem; font-weight:700; color:var(--verde-dark); font-family:'Cormorant Garamond',serif; line-height:1;">4,93</div>
       <div style="font-size:.85rem; color:var(--charcoal); line-height:1.5;" data-i18n="rec_top">Top 5% degli alloggi Airbnb</div>
-      <a href="https://www.airbnb.it/users/profile/1596316787840331519" target="_blank" style="margin-top:12px; font-size:.82rem; color:var(--verde); text-decoration:underline; text-underline-offset:3px;" data-i18n="rec_link">Leggi tutte le recensioni →</a>
+      <a href="https://www.airbnb.it/users/profile/1596316787840331519" target="_blank" style="margin-top:12px; font-size:.82rem; color:var(--verde-dark); text-decoration:underline; text-underline-offset:3px;" data-i18n="rec_link">Leggi tutte le recensioni →</a>
     </div>
 
   </div>
@@ -939,19 +941,19 @@
         <div id="form-main">
           <h3 data-i18n="form_t">Richiedi disponibilità</h3>
           <div class="fg-row">
-            <div class="fg"><label data-i18n="f_nome">Nome</label><input type="text" name="nome" placeholder="Il tuo nome" data-i18n-ph="ph_nome" required=""></div>
-            <div class="fg"><label data-i18n="f_cognome">Cognome</label><input type="text" name="cognome" placeholder="Cognome" data-i18n-ph="ph_cognome" required=""></div>
+            <div class="fg"><label for="f-nome" data-i18n="f_nome">Nome</label><input type="text" id="f-nome" name="nome" placeholder="Il tuo nome" data-i18n-ph="ph_nome" required=""></div>
+            <div class="fg"><label for="f-cognome" data-i18n="f_cognome">Cognome</label><input type="text" id="f-cognome" name="cognome" placeholder="Cognome" data-i18n-ph="ph_cognome" required=""></div>
           </div>
-          <div class="fg"><label data-i18n="f_email">Email</label><input type="email" name="email" placeholder="email@esempio.it" data-i18n-ph="ph_email" required=""></div>
-          <div class="fg"><label data-i18n="f_tel">Telefono / WhatsApp</label><input type="tel" name="telefono" placeholder="+39 ..." data-i18n-ph="ph_tel" required=""></div>
+          <div class="fg"><label for="f-email" data-i18n="f_email">Email</label><input type="email" id="f-email" name="email" placeholder="email@esempio.it" data-i18n-ph="ph_email" required=""></div>
+          <div class="fg"><label for="f-telefono" data-i18n="f_tel">Telefono / WhatsApp</label><input type="tel" id="f-telefono" name="telefono" placeholder="+39 ..." data-i18n-ph="ph_tel" required=""></div>
           <div class="fg-row">
-            <div class="fg"><label data-i18n="f_in">Check-in</label><input type="date" name="check_in" required=""></div>
-            <div class="fg"><label data-i18n="f_out">Check-out</label><input type="date" name="check_out" required=""></div>
+            <div class="fg"><label for="f-check-in" data-i18n="f_in">Check-in</label><input type="date" id="f-check-in" name="check_in" required=""></div>
+            <div class="fg"><label for="f-check-out" data-i18n="f_out">Check-out</label><input type="date" id="f-check-out" name="check_out" required=""></div>
           </div>
-          <div class="fg"><label data-i18n="f_ospiti">Numero ospiti</label>
-            <select name="ospiti"><option data-i18n="op2">2 persone</option><option data-i18n="op3">3 persone</option><option data-i18n="op4">4 persone</option></select>
+          <div class="fg"><label for="f-ospiti" data-i18n="f_ospiti">Numero ospiti</label>
+            <select id="f-ospiti" name="ospiti"><option data-i18n="op2">2 persone</option><option data-i18n="op3">3 persone</option><option data-i18n="op4">4 persone</option></select>
           </div>
-          <div class="fg"><label data-i18n="f_note">Note o richieste</label><textarea rows="3" name="note" placeholder="Es. arrivo in tarda serata, bambini piccoli..." data-i18n-ph="ph_note"></textarea></div>
+          <div class="fg"><label for="f-note" data-i18n="f_note">Note o richieste</label><textarea rows="3" id="f-note" name="note" placeholder="Es. arrivo in tarda serata, bambini piccoli..." data-i18n-ph="ph_note"></textarea></div>
           <div class="fg fg-consent"><label><input type="checkbox" name="privacy" value="accettata" required><span>Ho letto l'<a href="/privacy/" target="_blank" rel="noopener">informativa sulla privacy</a> e acconsento al trattamento dei miei dati per ricevere una risposta a questa richiesta.</span></label></div><button type="submit" class="btn-submit" id="submit-btn" data-i18n="f_btn">Invia richiesta</button>
           <p class="form-note" data-i18n="f_note2">Lisa ti risponderà entro poche ore 🌿</p><p class="form-disclaimer">L'invio del modulo non è una prenotazione: Lisa ti conferma disponibilità e condizioni prima di confermare il soggiorno.</p>
         </div>
@@ -1236,7 +1238,7 @@ function submitForm(event) {
 const I18N = {"it": {"js_err": "Si è verificato un problema. Riprova oppure contattaci direttamente via WhatsApp.", "js_sending": "Invio in corso...", "f_btn": "Invia richiesta"}};
 const LANG = "it";
 (function(){try{var q=new URLSearchParams(location.search).get("lang");var m={it:"/",en:"/en/",de:"/de/"};if(q&&m[q]&&q!==LANG)location.replace(m[q]);}catch(e){}})();
-(function(){var c=document.getElementById("navtoggle");if(!c)return;document.querySelectorAll("nav ul a").forEach(function(a){a.addEventListener("click",function(){c.checked=false;});});})();
+(function(){var b=document.getElementById("navtoggle"),r=document.querySelector(".nav-right");if(!b||!r)return;function set(o){r.classList.toggle("nav-open",o);b.setAttribute("aria-expanded",o?"true":"false");}b.addEventListener("click",function(){set(!r.classList.contains("nav-open"));});document.querySelectorAll("nav ul a").forEach(function(a){a.addEventListener("click",function(){set(false);});});})();
 </script>
 
 
@@ -1258,8 +1260,8 @@ const LANG = "it";
       <p>Servono al funzionamento del sito e a ricordare questa scelta. Non possono essere disattivati.</p>
     </div>
     <div class="ck-opt">
-      <div class="ck-opt-head"><strong>Cookie statistici</strong>
-        <label class="ck-switch"><input type="checkbox" id="ck-stats"></label>
+      <div class="ck-opt-head"><strong id="ck-stats-lab">Cookie statistici</strong>
+        <label class="ck-switch"><input type="checkbox" id="ck-stats" aria-labelledby="ck-stats-lab"></label>
       </div>
       <p>Google Analytics. Ci dicono quante persone visitano il sito e quali pagine leggono. Sono facoltativi.</p>
     </div>
