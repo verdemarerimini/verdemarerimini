@@ -62,7 +62,7 @@
       "smokingAllowed": false,
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Via Pomezia 2",
+        "streetAddress": "Viale Pomezia 2",
         "addressLocality": "Rimini",
         "addressRegion": "RN",
         "postalCode": "47924",
@@ -154,7 +154,7 @@
       "currenciesAccepted": "EUR",
       "address": {
         "@type": "PostalAddress",
-        "streetAddress": "Via Pomezia 2",
+        "streetAddress": "Viale Pomezia 2",
         "addressLocality": "Rimini",
         "addressRegion": "RN",
         "postalCode": "47924",
@@ -327,7 +327,7 @@
   ]
 }
 </script>
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&amp;family=DM+Sans:wght@300;400;500&amp;display=swap" rel="stylesheet">
+<link href="/fonts/fonts.css" rel="stylesheet">
 <style>
   :root {
     --verde: #6b9e8c;
@@ -499,6 +499,17 @@
   .contact-link:hover { background:var(--verde-light); }
   .map-box { border-radius:12px; overflow:hidden; min-height:380px; }
   .map-box iframe { width:100%; height:100%; border:none; min-height:380px; }
+  /* --- mappa caricata solo su clic --- */
+  .map-ph { min-height:380px; display:flex; flex-direction:column; align-items:center; justify-content:center;
+    text-align:center; gap:11px; padding:30px 26px; background:var(--verde-pale); }
+  .map-ph-t { font-family:'Cormorant Garamond',serif; font-size:1.35rem; font-weight:600; color:var(--charcoal); }
+  .map-ph-d { font-size:.84rem; line-height:1.62; color:var(--text-mid); max-width:390px; }
+  .map-ph-b { font-family:'DM Sans',sans-serif; font-size:.88rem; font-weight:500; letter-spacing:.01em;
+    padding:12px 26px; border-radius:6px; border:1.5px solid var(--verde); background:var(--verde); color:#fff;
+    cursor:pointer; transition:background .2s, border-color .2s; }
+  .map-ph-b:hover, .map-ph-b:active { background:#5a8a79; border-color:#5a8a79; }
+  .map-ph-a { font-size:.78rem; color:var(--text-mid); }
+  .map-ph-a a { color:var(--verde); }
 
   /* FOOTER */
   footer { background:var(--charcoal); color:rgba(255,255,255,.55); text-align:center; padding:28px; font-size:.78rem; letter-spacing:.05em; }
@@ -549,6 +560,44 @@
 
   .hero-m { display:none; }
   .nav-toggle, .nav-toggle-cb { display:none; }
+
+  /* --- consenso cookie --- */
+  #ck-banner, #ck-prefs { display:none; font-family:'DM Sans',sans-serif; }
+  #ck-banner.on { display:block; }
+  #ck-prefs.on { display:flex; }
+  #ck-banner {
+    position:fixed; left:16px; right:16px; bottom:16px; z-index:900;
+    background:var(--warm-white); border:1px solid rgba(107,158,140,.3);
+    border-left:3px solid var(--verde); border-radius:10px;
+    box-shadow:0 14px 40px rgba(45,45,45,.16);
+    padding:20px 22px; max-width:560px; margin:0 auto;
+  }
+  #ck-banner h2 { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; color:var(--charcoal); margin-bottom:7px; }
+  #ck-banner p { font-size:.86rem; line-height:1.62; color:var(--text-mid); margin-bottom:15px; }
+  #ck-banner p a, #ck-prefs p a { color:var(--verde); }
+  .ck-actions { display:flex; flex-wrap:wrap; gap:9px; }
+  .ck-btn { flex:1 1 150px; min-height:42px; padding:11px 16px; border-radius:6px; font-family:'DM Sans',sans-serif;
+    font-size:.85rem; font-weight:500; cursor:pointer; text-align:center; border:1.5px solid var(--verde); transition:all .2s; }
+  .ck-accept { background:var(--verde); color:#fff; }
+  .ck-accept:hover { background:#5a8a79; border-color:#5a8a79; }
+  .ck-reject { background:var(--warm-white); color:var(--verde); }
+  .ck-reject:hover { background:var(--verde-pale); }
+  .ck-custom { background:var(--warm-white); color:var(--text-mid); border-color:#d9d5cc; }
+  .ck-custom:hover { border-color:var(--text-mid); }
+  #ck-prefs { position:fixed; inset:0; z-index:910; background:rgba(45,45,45,.45); align-items:center; justify-content:center; padding:20px; }
+  .ck-panel { background:var(--warm-white); border-radius:12px; max-width:540px; width:100%; max-height:86vh; overflow:auto; padding:26px 26px 22px; box-shadow:0 20px 50px rgba(45,45,45,.2); }
+  .ck-panel h2 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:600; margin-bottom:16px; }
+  .ck-opt { border-top:1px solid rgba(107,158,140,.22); padding:15px 0; }
+  .ck-opt-head { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+  .ck-opt-head strong { font-size:.92rem; font-weight:600; color:var(--charcoal); }
+  .ck-opt p { font-size:.82rem; line-height:1.6; color:var(--text-mid); margin-top:6px; }
+  .ck-fixed { font-size:.76rem; letter-spacing:.06em; text-transform:uppercase; color:var(--verde); white-space:nowrap; }
+  .ck-switch input { width:18px; height:18px; accent-color:var(--verde); cursor:pointer; }
+  .ck-panel .ck-actions { margin-top:20px; }
+  @media(max-width:600px){
+    #ck-banner { left:10px; right:10px; bottom:10px; padding:18px 18px 16px; }
+    .ck-btn { flex:1 1 100%; }
+  }
   @media(max-width:900px){
     .hero { grid-template-columns:1fr; }
     .hero-text { padding:56px 28px; }
@@ -1068,9 +1117,14 @@
       </div>
     </div>
     <div>
-      <p data-i18n="c_addr" style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:12px;">📍 Via Pomezia 2, Rimini</p>
-      <div class="map-box">
-      <iframe src="https://www.google.com/maps?q=Via+Pomezia+2,+Rimini&amp;output=embed" allowfullscreen="" loading="lazy"></iframe>
+      <p data-i18n="c_addr" style="font-family:'Cormorant Garamond',serif;font-size:1.2rem;margin-bottom:12px;">📍 Viale Pomezia 2, Rimini</p>
+      <div class="map-box" id="map-box">
+      <div class="map-ph" id="map-ph">
+        <p class="map-ph-t">Mappa di Google</p>
+        <p class="map-ph-d">Toccando il pulsante la mappa viene caricata dai server di Google, che riceveranno il tuo indirizzo IP e potranno impostare cookie propri.</p>
+        <button type="button" class="map-ph-b" id="map-go">Visualizza la mappa</button>
+        <p class="map-ph-a"><a href="https://www.google.com/maps?q=Viale+Pomezia+2,+Rimini" target="_blank" rel="noopener">Apri in Google Maps</a> &middot; <a href="/cookie/">Cookie policy</a></p>
+      </div>
       </div>
     </div>
   </div>
@@ -1079,7 +1133,7 @@
 <footer>
   <p data-i18n="foot">© 2025 <strong>Verde Mare</strong> · Appartamento turistico · Rimini · Tutti i diritti riservati</p>
   <p style="margin-top:6px;">Con cura di Lisa &amp; Maurizio 🌿</p>
-  <p style="margin-top:8px; font-size:.72rem; letter-spacing:.08em; opacity:.7;">CIN: IT099014C2Y8SXKPF8</p><p style="margin-top:10px; font-size:.78rem;"><a href="/privacy/" style="color:inherit; opacity:.8;">Informativa privacy</a></p>
+  <p style="margin-top:8px; font-size:.72rem; letter-spacing:.08em; opacity:.7;">CIN: IT099014C2Y8SXKPF8</p><p style="margin-top:10px; font-size:.78rem;"><a href="/privacy/" style="color:inherit; opacity:.8;">Informativa privacy</a> · <a href="#" id="ck-link" style="color:inherit; opacity:.8;">Preferenze cookie</a> &middot; <a href="/cookie/" style="color:inherit; opacity:.8;">Cookie policy</a></p>
 </footer>
 
 <!-- MODAL -->
@@ -1185,4 +1239,116 @@ const LANG = "it";
 (function(){var c=document.getElementById("navtoggle");if(!c)return;document.querySelectorAll("nav ul a").forEach(function(a){a.addEventListener("click",function(){c.checked=false;});});})();
 </script>
 
+
+<!-- CONSENSO COOKIE -->
+<div id="ck-banner" role="dialog" aria-live="polite" aria-label="Rispettiamo la tua privacy">
+  <h2>Rispettiamo la tua privacy</h2>
+  <p>Usiamo cookie tecnici, necessari al funzionamento del sito, e — solo con il tuo consenso — cookie statistici di Google Analytics per capire come viene usato il sito. Puoi accettare, rifiutare o scegliere. <a href="/privacy/">Informativa privacy</a></p>
+  <div class="ck-actions">
+    <button type="button" class="ck-btn ck-accept" id="ck-yes">Accetta</button>
+    <button type="button" class="ck-btn ck-reject" id="ck-no">Rifiuta</button>
+    <button type="button" class="ck-btn ck-custom" id="ck-more">Personalizza</button>
+  </div>
+</div>
+<div id="ck-prefs" role="dialog" aria-modal="true" aria-label="Preferenze cookie">
+  <div class="ck-panel">
+    <h2>Preferenze cookie</h2>
+    <div class="ck-opt">
+      <div class="ck-opt-head"><strong>Cookie tecnici necessari</strong><span class="ck-fixed">Sempre attivi</span></div>
+      <p>Servono al funzionamento del sito e a ricordare questa scelta. Non possono essere disattivati.</p>
+    </div>
+    <div class="ck-opt">
+      <div class="ck-opt-head"><strong>Cookie statistici</strong>
+        <label class="ck-switch"><input type="checkbox" id="ck-stats"></label>
+      </div>
+      <p>Google Analytics. Ci dicono quante persone visitano il sito e quali pagine leggono. Sono facoltativi.</p>
+    </div>
+    <div class="ck-actions">
+      <button type="button" class="ck-btn ck-accept" id="ck-save">Salva preferenze</button>
+      <button type="button" class="ck-btn ck-custom" id="ck-cancel">Chiudi</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var GA='G-X28S3D0D0P', KEY='vm_cookie_consent_v1', loaded=false;
+  function get(){ try{ return JSON.parse(localStorage.getItem(KEY)); }catch(e){ return null; } }
+  function set(v){ try{ localStorage.setItem(KEY, JSON.stringify({stats:!!v, ts:Date.now()})); }catch(e){} }
+  function loadGA(){
+    /* lo sblocco va fatto sempre: dopo una revoca il flag e' rimasto a true
+       e una nuova accettazione nella stessa visita deve riattivare la raccolta */
+    window['ga-disable-'+GA] = false;
+    if (loaded || window.__vmGA) return;   /* gtag.js si carica una volta sola */
+    loaded = true; window.__vmGA = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+    gtag('js', new Date());
+    var s = document.createElement('script');
+    s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA;
+    document.head.appendChild(s);
+    gtag('config', GA);
+  }
+  function ckDomains(){
+    /* i cookie di Analytics sono impostati sul dominio registrabile
+       (verdemarerimini.it), non su www: vanno tentati entrambi, con e senza
+       punto iniziale, piu' la variante senza attributo domain */
+    var p = location.hostname.split('.'), out = ['', p.join('.'), '.' + p.join('.')];
+    while (p.length > 2) { p.shift(); var d = p.join('.'); out.push(d, '.' + d); }
+    return out;
+  }
+  function dropGA(){
+    window['ga-disable-'+GA] = true;
+    var doms = ckDomains();
+    document.cookie.split(';').forEach(function(c){
+      var n = c.split('=')[0].trim();
+      if (n.indexOf('_ga') === 0 || n.indexOf('_gid') === 0 || n.indexOf('_gat') === 0) {
+        doms.forEach(function(d){
+          document.cookie = n + '=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT'
+                              + (d ? '; domain=' + d : '');
+        });
+      }
+    });
+  }
+  var banner = document.getElementById('ck-banner'),
+      prefs  = document.getElementById('ck-prefs'),
+      stats  = document.getElementById('ck-stats');
+  function showBanner(){ banner.classList.add('on'); }
+  function hideBanner(){ banner.classList.remove('on'); }
+  function openPrefs(){
+    var c = get(); stats.checked = !!(c && c.stats);
+    hideBanner(); prefs.classList.add('on');
+  }
+  function closePrefs(){ prefs.classList.remove('on'); if (!get()) showBanner(); }
+  function apply(v){ set(v); if (v) loadGA(); else dropGA(); }
+  document.getElementById('ck-yes').addEventListener('click', function(){ apply(true); hideBanner(); });
+  document.getElementById('ck-no').addEventListener('click', function(){ apply(false); hideBanner(); });
+  document.getElementById('ck-more').addEventListener('click', openPrefs);
+  document.getElementById('ck-save').addEventListener('click', function(){ apply(stats.checked); prefs.classList.remove('on'); });
+  document.getElementById('ck-cancel').addEventListener('click', closePrefs);
+  prefs.addEventListener('click', function(e){ if (e.target === prefs) closePrefs(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && prefs.classList.contains('on')) closePrefs(); });
+  var link = document.getElementById('ck-link');
+  if (link) link.addEventListener('click', function(e){ e.preventDefault(); openPrefs(); });
+  var saved = get();
+  if (saved === null) showBanner(); else if (saved.stats) loadGA(); else window['ga-disable-'+GA] = true;
+})();
+</script>
+<script>
+/* mappa Google: nessuna connessione prima del clic */
+(function(){
+  var b = document.getElementById('map-go');
+  if (!b) return;
+  b.addEventListener('click', function(){
+    var box = document.getElementById('map-box'), ph = document.getElementById('map-ph');
+    if (!box || box.querySelector('iframe')) return;
+    var f = document.createElement('iframe');
+    f.src = 'https://www.google.com/maps?q=Viale+Pomezia+2,+Rimini&output=embed';
+    f.title = "Mappa della zona di Viale Pomezia 2, Rimini";
+    f.setAttribute('allowfullscreen', '');
+    f.setAttribute('referrerpolicy', 'no-referrer-when-downgrade');
+    if (ph && ph.parentNode) ph.parentNode.removeChild(ph);
+    box.appendChild(f);
+  });
+})();
+</script>
 </body></html>

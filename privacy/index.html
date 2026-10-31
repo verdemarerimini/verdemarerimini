@@ -10,7 +10,7 @@
 <link rel="alternate" hreflang="en" href="https://www.verdemarerimini.it/en/privacy/">
 <link rel="alternate" hreflang="de" href="https://www.verdemarerimini.it/de/privacy/">
 <link rel="alternate" hreflang="x-default" href="https://www.verdemarerimini.it/privacy/">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="/fonts/fonts.css" rel="stylesheet">
 <style>
   :root { --verde:#6b9e8c; --verde-pale:#e8f0ed; --sand:#f5f0e8; --warm-white:#fdfcf9; --charcoal:#2d2d2d; --text-mid:#555; --sea:#4a8fa8; }
   * { margin:0; padding:0; box-sizing:border-box; }
@@ -31,7 +31,52 @@
   strong { color:var(--charcoal); }
   .date { margin-top:34px; padding-top:16px; border-top:1px solid rgba(107,158,140,0.25); font-size:.85rem; opacity:.75; }
   footer { background:var(--sand); padding:28px 24px; text-align:center; font-size:.82rem; color:var(--text-mid); }
+  .foot-links { display:block; margin-top:8px; font-size:.78rem; }
+  .foot-links a { color:inherit; opacity:.85; }
+  table.ck-tab { width:100%; border-collapse:collapse; margin:10px 0 18px; font-size:.84rem; }
+  table.ck-tab th, table.ck-tab td { text-align:left; vertical-align:top; padding:9px 10px; border-bottom:1px solid rgba(107,158,140,.22); }
+  table.ck-tab th { font-weight:600; color:var(--charcoal); background:var(--verde-pale); }
+  table.ck-tab td { color:var(--text-mid); }
+  table.ck-tab code { font-family:ui-monospace,SFMono-Regular,Menlo,monospace; font-size:.9em; color:var(--charcoal); }
+  .tab-wrap { overflow-x:auto; }
   @media(max-width:700px) { h1 { font-size:2rem; } main { padding:40px 20px 56px; } }
+  /* --- consenso cookie --- */
+  #ck-banner, #ck-prefs { display:none; font-family:'DM Sans',sans-serif; }
+  #ck-banner.on { display:block; }
+  #ck-prefs.on { display:flex; }
+  #ck-banner {
+    position:fixed; left:16px; right:16px; bottom:16px; z-index:900;
+    background:var(--warm-white); border:1px solid rgba(107,158,140,.3);
+    border-left:3px solid var(--verde); border-radius:10px;
+    box-shadow:0 14px 40px rgba(45,45,45,.16);
+    padding:20px 22px; max-width:560px; margin:0 auto;
+  }
+  #ck-banner h2 { font-family:'Cormorant Garamond',serif; font-size:1.3rem; font-weight:600; color:var(--charcoal); margin-bottom:7px; }
+  #ck-banner p { font-size:.86rem; line-height:1.62; color:var(--text-mid); margin-bottom:15px; }
+  #ck-banner p a, #ck-prefs p a { color:var(--verde); }
+  .ck-actions { display:flex; flex-wrap:wrap; gap:9px; }
+  .ck-btn { flex:1 1 150px; min-height:42px; padding:11px 16px; border-radius:6px; font-family:'DM Sans',sans-serif;
+    font-size:.85rem; font-weight:500; cursor:pointer; text-align:center; border:1.5px solid var(--verde); transition:all .2s; }
+  .ck-accept { background:var(--verde); color:#fff; }
+  .ck-accept:hover { background:#5a8a79; border-color:#5a8a79; }
+  .ck-reject { background:var(--warm-white); color:var(--verde); }
+  .ck-reject:hover { background:var(--verde-pale); }
+  .ck-custom { background:var(--warm-white); color:var(--text-mid); border-color:#d9d5cc; }
+  .ck-custom:hover { border-color:var(--text-mid); }
+  #ck-prefs { position:fixed; inset:0; z-index:910; background:rgba(45,45,45,.45); align-items:center; justify-content:center; padding:20px; }
+  .ck-panel { background:var(--warm-white); border-radius:12px; max-width:540px; width:100%; max-height:86vh; overflow:auto; padding:26px 26px 22px; box-shadow:0 20px 50px rgba(45,45,45,.2); }
+  .ck-panel h2 { font-family:'Cormorant Garamond',serif; font-size:1.5rem; font-weight:600; margin-bottom:16px; }
+  .ck-opt { border-top:1px solid rgba(107,158,140,.22); padding:15px 0; }
+  .ck-opt-head { display:flex; align-items:center; justify-content:space-between; gap:12px; }
+  .ck-opt-head strong { font-size:.92rem; font-weight:600; color:var(--charcoal); }
+  .ck-opt p { font-size:.82rem; line-height:1.6; color:var(--text-mid); margin-top:6px; }
+  .ck-fixed { font-size:.76rem; letter-spacing:.06em; text-transform:uppercase; color:var(--verde); white-space:nowrap; }
+  .ck-switch input { width:18px; height:18px; accent-color:var(--verde); cursor:pointer; }
+  .ck-panel .ck-actions { margin-top:20px; }
+  @media(max-width:600px){
+    #ck-banner { left:10px; right:10px; bottom:10px; padding:18px 18px 16px; }
+    .ck-btn { flex:1 1 100%; }
+  }
 </style>
 </head>
 <body>
@@ -41,41 +86,145 @@
 </header>
 <main>
 <h1>Informativa sulla privacy</h1>
-<p class="lead">Questa pagina spiega come vengono trattati i dati personali di chi visita il sito di Verde Mare o invia una richiesta di disponibilità. È redatta ai sensi dell'articolo 13 del Regolamento (UE) 2016/679.</p>
+<p class="lead">Questa pagina spiega come vengono trattati i dati personali di chi visita il sito di Verde Mare o invia una richiesta di disponibilità. È redatta ai sensi dell'articolo 13 del Regolamento (UE) 2016/679. L'elenco dei singoli cookie si trova nella <a href="/cookie/">cookie policy</a>.</p>
 
 <h2>Chi tratta i dati</h2>
-<p>Il titolare del trattamento è <strong>Lisa Berlini</strong>, in qualità di persona fisica, con sede in Via Pomezia 2, 47924 Rimini (RN), Italia. Per qualsiasi domanda o richiesta relativa ai dati personali si può scrivere a <a href="mailto:info@hostrimini.it">info@hostrimini.it</a>.</p>
+<p>Il titolare del trattamento è <strong>Lisa Berlini</strong>, in qualità di persona fisica, con sede in Viale Pomezia 2, 47924 Rimini (RN), Italia. Per qualsiasi domanda o richiesta relativa ai dati personali si può scrivere a <a href="mailto:info@hostrimini.it">info@hostrimini.it</a>.</p>
 
 <h2>Quali dati vengono raccolti</h2>
 <p>Attraverso il modulo di richiesta disponibilità: nome, cognome, indirizzo email, numero di telefono, date di arrivo e partenza, numero di ospiti ed eventuali note che decidi di scrivere.</p>
 <p>Se la richiesta si trasforma in un soggiorno, al momento dell'arrivo vengono raccolti anche i dati del documento d'identità degli ospiti, come previsto dalla legge.</p>
-<p>Navigando sul sito non vengono raccolti dati con finalità di profilazione e non vengono usati cookie di marketing. Alcuni servizi esterni descritti più avanti possono però registrare l'indirizzo IP del visitatore.</p>
+<p>Navigando sul sito non vengono raccolti dati con finalità di profilazione e non vengono usati cookie di marketing o di pubblicità. I caratteri tipografici sono ospitati sul nostro dominio e la mappa della pagina contatti viene caricata solo se la richiedi con l'apposito pulsante: aprendo il sito, quindi, nessun contenuto viene scaricato da server esterni.</p>
+<p>Se acconsenti ai cookie statistici, Google Analytics raccoglie dati sulla navigazione: pagine viste, durata della visita, tipo di dispositivo e di browser, lingua, provenienza approssimativa e sorgente di arrivo. Questi dati sono usati in forma aggregata e non servono a identificarti.</p>
+
+<h2>Cookie e statistiche di utilizzo</h2>
+<p>Al primo accesso compare un banner che chiede se accetti i cookie statistici. Finché non scegli, nessuno strumento di statistica viene attivato; se rifiuti, non viene attivato affatto.</p>
+<p>Lo strumento usato è <strong>Google Analytics 4</strong> (identificativo di misurazione G-X28S3D0D0P), fornito da Google Ireland Limited. Serve soltanto a capire quante persone visitano il sito e quali pagine leggono, per migliorarlo. Non è collegato a strumenti pubblicitari e non viene usato per costruire profili individuali.</p>
+<p>Google utilizza l'indirizzo IP per ricavare la provenienza approssimativa e non lo conserva nei dati di Analytics. La conservazione dei dati a livello di utente e di evento è impostata su <strong>due mesi</strong>, il periodo più breve previsto dallo strumento.</p>
+<p>Puoi cambiare idea in qualsiasi momento: il collegamento <strong>Preferenze cookie</strong>, in fondo a ogni pagina, riapre la scelta. Revocando il consenso la raccolta si interrompe e i cookie di Analytics presenti sul dispositivo vengono cancellati.</p>
 
 <h2>Perché vengono trattati e su quale base</h2>
 <p><strong>Per rispondere alla richiesta e organizzare l'eventuale soggiorno.</strong> La base giuridica è l'esecuzione di misure precontrattuali e contrattuali, articolo 6, paragrafo 1, lettera b del Regolamento. Senza questi dati non è possibile rispondere.</p>
 <p><strong>Per adempiere agli obblighi di legge.</strong> In caso di soggiorno, la comunicazione dei dati degli ospiti alle autorità di pubblica sicurezza e gli adempimenti fiscali e amministrativi. La base giuridica è l'articolo 6, paragrafo 1, lettera c.</p>
+<p><strong>Per le statistiche di utilizzo del sito.</strong> La base giuridica è il tuo consenso, articolo 6, paragrafo 1, lettera a del Regolamento, insieme all'articolo 122 del Codice in materia di protezione dei dati personali per la memorizzazione dei cookie. Il consenso è libero e revocabile: il sito funziona esattamente allo stesso modo se lo rifiuti.</p>
 
 <h2>Chi altro vede i dati</h2>
 <p>I dati non vengono venduti né ceduti a terzi per finalità commerciali. Sono trattati, per le rispettive funzioni tecniche, dai seguenti fornitori:</p>
 <ul>
   <li><strong>Formspree</strong> (Formspree Inc., Stati Uniti) — raccoglie e inoltra i messaggi inviati dal modulo.</li>
   <li><strong>GitHub Pages</strong> (GitHub Inc., Stati Uniti) — ospita le pagine del sito e registra i dati tecnici di accesso.</li>
-  <li><strong>Google</strong> (Google Ireland Ltd. e Google LLC) — fornisce i caratteri tipografici e la mappa incorporata nella pagina dei contatti. L'apertura della pagina comporta una connessione ai server di Google, che riceve l'indirizzo IP del visitatore.</li>
+  <li><strong>Google</strong> (Google Ireland Ltd. e Google LLC, Stati Uniti) — fornisce Google Analytics, attivo solo con il tuo consenso, e la mappa della pagina contatti, caricata solo se premi il pulsante. In entrambi i casi Google riceve l'indirizzo IP del dispositivo. Senza consenso e senza clic sulla mappa il sito non contatta i server di Google.</li>
   <li><strong>WhatsApp</strong> (Meta Platforms Ireland Ltd.) — solo se scegli di contattarci da quel canale.</li>
 </ul>
 <p>Alcuni di questi fornitori hanno sede negli Stati Uniti: il trasferimento avviene sulla base delle clausole contrattuali tipo approvate dalla Commissione europea o di una decisione di adeguatezza.</p>
 
 <h2>Per quanto tempo vengono conservati</h2>
 <p>Le richieste che non danno luogo a una prenotazione vengono conservate per dodici mesi, poi cancellate. I dati relativi a un soggiorno effettivo vengono conservati per i termini previsti dalle norme fiscali e di pubblica sicurezza.</p>
+<p>I dati statistici raccolti da Google Analytics, se hai dato il consenso, sono conservati due mesi a livello di utente e di evento. I cookie che Analytics lascia sul dispositivo hanno una durata propria, indicata nella <a href="/cookie/">cookie policy</a>.</p>
 
 <h2>Quali diritti hai</h2>
 <p>Puoi chiedere in ogni momento di accedere ai tuoi dati, di correggerli, di cancellarli, di limitarne il trattamento, di riceverli in formato leggibile o di opporti al trattamento. È sufficiente scrivere a <a href="mailto:info@hostrimini.it">info@hostrimini.it</a>: la risposta arriva entro trenta giorni.</p>
+<p>Se hai acconsentito ai cookie statistici puoi revocare il consenso in ogni momento dal collegamento <strong>Preferenze cookie</strong>, senza dover scrivere a nessuno. La revoca non pregiudica la liceità del trattamento già avvenuto.</p>
 <p>Se ritieni che il trattamento non sia conforme alla normativa, puoi presentare reclamo al <a href="https://www.garanteprivacy.it" target="_blank" rel="noopener">Garante per la protezione dei dati personali</a>.</p>
 
 <h2>Aggiornamenti</h2>
 <p>Eventuali modifiche vengono pubblicate su questa pagina, con la data aggiornata in fondo. Ti invitiamo a consultarla periodicamente.</p>
-<p class="date">Ultimo aggiornamento: 29 ottobre 2026</p>
+<p class="date">Ultimo aggiornamento: 31 ottobre 2026</p>
 </main>
-<footer>Verde Mare · Via Pomezia 2, Rimini · CIN IT099014C2Y8SXKPF8</footer>
+<footer>Verde Mare · Viale Pomezia 2, Rimini · CIN IT099014C2Y8SXKPF8
+<span class="foot-links"><a href="/cookie/">Cookie policy</a> · <a href="#" id="ck-link">Preferenze cookie</a></span></footer>
+<!-- CONSENSO COOKIE -->
+<div id="ck-banner" role="dialog" aria-live="polite" aria-label="Rispettiamo la tua privacy">
+  <h2>Rispettiamo la tua privacy</h2>
+  <p>Usiamo cookie tecnici, necessari al funzionamento del sito, e — solo con il tuo consenso — cookie statistici di Google Analytics per capire come viene usato il sito. Puoi accettare, rifiutare o scegliere. <a href="/privacy/">Informativa privacy</a></p>
+  <div class="ck-actions">
+    <button type="button" class="ck-btn ck-accept" id="ck-yes">Accetta</button>
+    <button type="button" class="ck-btn ck-reject" id="ck-no">Rifiuta</button>
+    <button type="button" class="ck-btn ck-custom" id="ck-more">Personalizza</button>
+  </div>
+</div>
+<div id="ck-prefs" role="dialog" aria-modal="true" aria-label="Preferenze cookie">
+  <div class="ck-panel">
+    <h2>Preferenze cookie</h2>
+    <div class="ck-opt">
+      <div class="ck-opt-head"><strong>Cookie tecnici necessari</strong><span class="ck-fixed">Sempre attivi</span></div>
+      <p>Servono al funzionamento del sito e a ricordare questa scelta. Non possono essere disattivati.</p>
+    </div>
+    <div class="ck-opt">
+      <div class="ck-opt-head"><strong>Cookie statistici</strong>
+        <label class="ck-switch"><input type="checkbox" id="ck-stats"></label>
+      </div>
+      <p>Google Analytics. Ci dicono quante persone visitano il sito e quali pagine leggono. Sono facoltativi.</p>
+    </div>
+    <div class="ck-actions">
+      <button type="button" class="ck-btn ck-accept" id="ck-save">Salva preferenze</button>
+      <button type="button" class="ck-btn ck-custom" id="ck-cancel">Chiudi</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  var GA='G-X28S3D0D0P', KEY='vm_cookie_consent_v1', loaded=false;
+  function get(){ try{ return JSON.parse(localStorage.getItem(KEY)); }catch(e){ return null; } }
+  function set(v){ try{ localStorage.setItem(KEY, JSON.stringify({stats:!!v, ts:Date.now()})); }catch(e){} }
+  function loadGA(){
+    /* lo sblocco va fatto sempre: dopo una revoca il flag e' rimasto a true
+       e una nuova accettazione nella stessa visita deve riattivare la raccolta */
+    window['ga-disable-'+GA] = false;
+    if (loaded || window.__vmGA) return;   /* gtag.js si carica una volta sola */
+    loaded = true; window.__vmGA = true;
+    window.dataLayer = window.dataLayer || [];
+    window.gtag = window.gtag || function(){ window.dataLayer.push(arguments); };
+    gtag('js', new Date());
+    var s = document.createElement('script');
+    s.async = true; s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA;
+    document.head.appendChild(s);
+    gtag('config', GA);
+  }
+  function ckDomains(){
+    /* i cookie di Analytics sono impostati sul dominio registrabile
+       (verdemarerimini.it), non su www: vanno tentati entrambi, con e senza
+       punto iniziale, piu' la variante senza attributo domain */
+    var p = location.hostname.split('.'), out = ['', p.join('.'), '.' + p.join('.')];
+    while (p.length > 2) { p.shift(); var d = p.join('.'); out.push(d, '.' + d); }
+    return out;
+  }
+  function dropGA(){
+    window['ga-disable-'+GA] = true;
+    var doms = ckDomains();
+    document.cookie.split(';').forEach(function(c){
+      var n = c.split('=')[0].trim();
+      if (n.indexOf('_ga') === 0 || n.indexOf('_gid') === 0 || n.indexOf('_gat') === 0) {
+        doms.forEach(function(d){
+          document.cookie = n + '=; path=/; expires=Thu, 01 Jan 1970 00:00:00 GMT'
+                              + (d ? '; domain=' + d : '');
+        });
+      }
+    });
+  }
+  var banner = document.getElementById('ck-banner'),
+      prefs  = document.getElementById('ck-prefs'),
+      stats  = document.getElementById('ck-stats');
+  function showBanner(){ banner.classList.add('on'); }
+  function hideBanner(){ banner.classList.remove('on'); }
+  function openPrefs(){
+    var c = get(); stats.checked = !!(c && c.stats);
+    hideBanner(); prefs.classList.add('on');
+  }
+  function closePrefs(){ prefs.classList.remove('on'); if (!get()) showBanner(); }
+  function apply(v){ set(v); if (v) loadGA(); else dropGA(); }
+  document.getElementById('ck-yes').addEventListener('click', function(){ apply(true); hideBanner(); });
+  document.getElementById('ck-no').addEventListener('click', function(){ apply(false); hideBanner(); });
+  document.getElementById('ck-more').addEventListener('click', openPrefs);
+  document.getElementById('ck-save').addEventListener('click', function(){ apply(stats.checked); prefs.classList.remove('on'); });
+  document.getElementById('ck-cancel').addEventListener('click', closePrefs);
+  prefs.addEventListener('click', function(e){ if (e.target === prefs) closePrefs(); });
+  document.addEventListener('keydown', function(e){ if (e.key === 'Escape' && prefs.classList.contains('on')) closePrefs(); });
+  var link = document.getElementById('ck-link');
+  if (link) link.addEventListener('click', function(e){ e.preventDefault(); openPrefs(); });
+  var saved = get();
+  if (saved === null) showBanner(); else if (saved.stats) loadGA(); else window['ga-disable-'+GA] = true;
+})();
+</script>
 </body>
 </html>

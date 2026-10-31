@@ -1,0 +1,29 @@
+VERDE MARE — file da caricare su GitHub
+31 ottobre 2026
+
+Carica tutto il contenuto di questo archivio nella radice del repository,
+mantenendo le cartelle così come sono. Sono 15 file in tutto.
+
+  index.html                 pagina italiana
+  en/index.html              pagina inglese
+  de/index.html              pagina tedesca
+
+  privacy/index.html         informativa privacy (aggiornata con Analytics)
+  en/privacy/index.html
+  de/privacy/index.html
+
+  cookie/index.html          cookie policy (nuova)
+  en/cookie/index.html       nuova
+  de/cookie/index.html       nuova
+
+  fonts/fonts.css            i caratteri, ora ospitati sul tuo dominio
+  fonts/files/               12 file .woff2
+  fonts/LICENSE-*.txt        le licenze dei caratteri (vanno tenute)
+
+  sitemap.xml                aggiornata: ora elenca 9 pagine
+
+NON è compresa la cartella foto/: le fotografie non sono state toccate e
+non vanno ricaricate.
+
+Dopo il caricamento, su GitHub Pages possono passare 5-10 minuti prima
+che il sito mostri la nuova versione.
